@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="TBS.Api/TBS.Api.csproj" />
+  <Project Path="TBS.Application/TBS.Application.csproj" />
+  <Project Path="TBS.Infrastructure/TBS.Infrastructure.csproj" />
+  <Project Path="TravelBookingSystem/TBS.Domain.csproj" />
+</Solution>
