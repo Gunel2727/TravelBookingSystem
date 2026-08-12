@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\TBS.Application\\TBS.Application.csproj",
+      "projectUniqueName": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TBS.Application\\TBS.Application.csproj",
       "projectName": "TBS.Application",
-      "projectPath": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\TBS.Application\\TBS.Application.csproj",
+      "projectPath": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TBS.Application\\TBS.Application.csproj",
       "packagesPath": "C:\\Users\\gunel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\TBS.Application\\obj\\",
+      "outputPath": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TBS.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

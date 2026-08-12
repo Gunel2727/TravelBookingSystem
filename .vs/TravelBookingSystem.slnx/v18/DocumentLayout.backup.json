@@ -1,38 +1,54 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\",
+  "WorkspaceRootPath": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3B4789B8-3B05-4122-897B-CCBDD204967D}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\source\\repos\\travelbookingsystem\\travelbookingsystem\\common\\auditableentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B4789B8-3B05-4122-897B-CCBDD204967D}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\common\\auditableentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\onedrive\\desktop\\travelbookingsystem\\travelbookingsystem\\entitites\\hotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\entitites\\hotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B4789B8-3B05-4122-897B-CCBDD204967D}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\source\\repos\\travelbookingsystem\\travelbookingsystem\\common\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B4789B8-3B05-4122-897B-CCBDD204967D}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\common\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\onedrive\\desktop\\travelbookingsystem\\travelbookingsystem\\entitites\\amenity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\entitites\\amenity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B4789B8-3B05-4122-897B-CCBDD204967D}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\source\\repos\\travelbookingsystem\\travelbookingsystem\\enums\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B4789B8-3B05-4122-897B-CCBDD204967D}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\enums\\roomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\onedrive\\desktop\\travelbookingsystem\\travelbookingsystem\\entitites\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\entitites\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B4789B8-3B05-4122-897B-CCBDD204967D}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\source\\repos\\travelbookingsystem\\travelbookingsystem\\enums\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B4789B8-3B05-4122-897B-CCBDD204967D}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\enums\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\onedrive\\desktop\\travelbookingsystem\\travelbookingsystem\\entitites\\hotelimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\entitites\\hotelimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B4789B8-3B05-4122-897B-CCBDD204967D}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\source\\repos\\travelbookingsystem\\travelbookingsystem\\enums\\paymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B4789B8-3B05-4122-897B-CCBDD204967D}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\enums\\paymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\onedrive\\desktop\\travelbookingsystem\\travelbookingsystem\\entitites\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\entitites\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B4789B8-3B05-4122-897B-CCBDD204967D}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\source\\repos\\travelbookingsystem\\travelbookingsystem\\enums\\flightstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B4789B8-3B05-4122-897B-CCBDD204967D}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\enums\\flightstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\onedrive\\desktop\\travelbookingsystem\\travelbookingsystem\\entitites\\flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\entitites\\flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B4789B8-3B05-4122-897B-CCBDD204967D}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\source\\repos\\travelbookingsystem\\travelbookingsystem\\enums\\currency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B4789B8-3B05-4122-897B-CCBDD204967D}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\enums\\currency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\onedrive\\desktop\\travelbookingsystem\\travelbookingsystem\\entitites\\airline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\entitites\\airline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B4789B8-3B05-4122-897B-CCBDD204967D}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\source\\repos\\travelbookingsystem\\travelbookingsystem\\enums\\bookingstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B4789B8-3B05-4122-897B-CCBDD204967D}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\enums\\bookingstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\onedrive\\desktop\\travelbookingsystem\\travelbookingsystem\\entitites\\airport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\entitites\\airport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\onedrive\\desktop\\travelbookingsystem\\travelbookingsystem\\entitites\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\entitites\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\onedrive\\desktop\\travelbookingsystem\\travelbookingsystem\\common\\auditableentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\common\\auditableentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\onedrive\\desktop\\travelbookingsystem\\travelbookingsystem\\entitites\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\entitites\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\onedrive\\desktop\\travelbookingsystem\\travelbookingsystem\\common\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\common\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,110 +58,162 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuditableEntity.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\TravelBookingSystem\\Common\\AuditableEntity.cs",
-              "RelativeDocumentMoniker": "TravelBookingSystem\\Common\\AuditableEntity.cs",
-              "ToolTip": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\TravelBookingSystem\\Common\\AuditableEntity.cs",
-              "RelativeToolTip": "TravelBookingSystem\\Common\\AuditableEntity.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-05T19:35:02.308Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "BaseEntity.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\TravelBookingSystem\\Common\\BaseEntity.cs",
-              "RelativeDocumentMoniker": "TravelBookingSystem\\Common\\BaseEntity.cs",
-              "ToolTip": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\TravelBookingSystem\\Common\\BaseEntity.cs",
-              "RelativeToolTip": "TravelBookingSystem\\Common\\BaseEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Title": "Amenity.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\Amenity.cs",
+              "RelativeDocumentMoniker": "TravelBookingSystem\\Entitites\\Amenity.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\Amenity.cs",
+              "RelativeToolTip": "TravelBookingSystem\\Entitites\\Amenity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-05T19:34:35.454Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Currency.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\TravelBookingSystem\\Enums\\Currency.cs",
-              "RelativeDocumentMoniker": "TravelBookingSystem\\Enums\\Currency.cs",
-              "ToolTip": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\TravelBookingSystem\\Enums\\Currency.cs",
-              "RelativeToolTip": "TravelBookingSystem\\Enums\\Currency.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-05T19:29:25.679Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FlightStatus.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\TravelBookingSystem\\Enums\\FlightStatus.cs",
-              "RelativeDocumentMoniker": "TravelBookingSystem\\Enums\\FlightStatus.cs",
-              "ToolTip": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\TravelBookingSystem\\Enums\\FlightStatus.cs",
-              "RelativeToolTip": "TravelBookingSystem\\Enums\\FlightStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-05T19:28:31.636Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PaymentMethod.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\TravelBookingSystem\\Enums\\PaymentMethod.cs",
-              "RelativeDocumentMoniker": "TravelBookingSystem\\Enums\\PaymentMethod.cs",
-              "ToolTip": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\TravelBookingSystem\\Enums\\PaymentMethod.cs",
-              "RelativeToolTip": "TravelBookingSystem\\Enums\\PaymentMethod.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-05T19:24:09.871Z",
+              "WhenOpened": "2026-08-12T19:41:18.148Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "PaymentStatus.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\TravelBookingSystem\\Enums\\PaymentStatus.cs",
-              "RelativeDocumentMoniker": "TravelBookingSystem\\Enums\\PaymentStatus.cs",
-              "ToolTip": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\TravelBookingSystem\\Enums\\PaymentStatus.cs",
-              "RelativeToolTip": "TravelBookingSystem\\Enums\\PaymentStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAASAAAAAAAAAA==",
+              "Title": "HotelImage.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\HotelImage.cs",
+              "RelativeDocumentMoniker": "TravelBookingSystem\\Entitites\\HotelImage.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\HotelImage.cs",
+              "RelativeToolTip": "TravelBookingSystem\\Entitites\\HotelImage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-05T19:23:14.569Z",
+              "WhenOpened": "2026-08-12T19:41:03.018Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "RoomType.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\TravelBookingSystem\\Enums\\RoomType.cs",
-              "RelativeDocumentMoniker": "TravelBookingSystem\\Enums\\RoomType.cs",
-              "ToolTip": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\TravelBookingSystem\\Enums\\RoomType.cs",
-              "RelativeToolTip": "TravelBookingSystem\\Enums\\RoomType.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA==",
+              "Title": "Room.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\Room.cs",
+              "RelativeDocumentMoniker": "TravelBookingSystem\\Entitites\\Room.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\Room.cs",
+              "RelativeToolTip": "TravelBookingSystem\\Entitites\\Room.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-05T19:25:03.643Z",
+              "WhenOpened": "2026-08-12T19:40:48.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Hotel.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\Hotel.cs",
+              "RelativeDocumentMoniker": "TravelBookingSystem\\Entitites\\Hotel.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\Hotel.cs",
+              "RelativeToolTip": "TravelBookingSystem\\Entitites\\Hotel.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAuwBMAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T19:36:36.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Flight.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\Flight.cs",
+              "RelativeDocumentMoniker": "TravelBookingSystem\\Entitites\\Flight.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\Flight.cs",
+              "RelativeToolTip": "TravelBookingSystem\\Entitites\\Flight.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABQAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T19:21:28.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Airline.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\Airline.cs",
+              "RelativeDocumentMoniker": "TravelBookingSystem\\Entitites\\Airline.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\Airline.cs",
+              "RelativeToolTip": "TravelBookingSystem\\Entitites\\Airline.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T19:18:28.828Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "BookingStatus.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\TravelBookingSystem\\Enums\\BookingStatus.cs",
-              "RelativeDocumentMoniker": "TravelBookingSystem\\Enums\\BookingStatus.cs",
-              "ToolTip": "C:\\Users\\gunel\\source\\repos\\TravelBookingSystem\\TravelBookingSystem\\Enums\\BookingStatus.cs",
-              "RelativeToolTip": "TravelBookingSystem\\Enums\\BookingStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAATAAAAAAAAAA==",
+              "Title": "Airport.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\Airport.cs",
+              "RelativeDocumentMoniker": "TravelBookingSystem\\Entitites\\Airport.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\Airport.cs",
+              "RelativeToolTip": "TravelBookingSystem\\Entitites\\Airport.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-05T19:21:22.105Z",
+              "WhenOpened": "2026-08-12T19:14:59.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "City.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\City.cs",
+              "RelativeDocumentMoniker": "TravelBookingSystem\\Entitites\\City.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\City.cs",
+              "RelativeToolTip": "TravelBookingSystem\\Entitites\\City.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T19:06:25.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Country.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\Country.cs",
+              "RelativeDocumentMoniker": "TravelBookingSystem\\Entitites\\Country.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\Country.cs",
+              "RelativeToolTip": "TravelBookingSystem\\Entitites\\Country.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T19:04:14.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "TravelBookingSystem\\Entitites\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\ApplicationUser.cs",
+              "RelativeToolTip": "TravelBookingSystem\\Entitites\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T18:47:20.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Common\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "TravelBookingSystem\\Common\\BaseEntity.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Common\\BaseEntity.cs",
+              "RelativeToolTip": "TravelBookingSystem\\Common\\BaseEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T18:39:59.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AuditableEntity.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Common\\AuditableEntity.cs",
+              "RelativeDocumentMoniker": "TravelBookingSystem\\Common\\AuditableEntity.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Common\\AuditableEntity.cs",
+              "RelativeToolTip": "TravelBookingSystem\\Common\\AuditableEntity.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T18:39:52.813Z",
               "EditorCaption": ""
             }
           ]
