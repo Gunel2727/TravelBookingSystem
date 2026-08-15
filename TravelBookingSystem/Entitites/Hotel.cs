@@ -17,6 +17,6 @@ namespace TBS.Domain.Entitites
         public City City { get; set; } = null!;
         public ICollection<Room> Rooms { get; set; } = new List<Room>();
         public ICollection<HotelImage> HotelImages { get; set; } = new List<HotelImage>();
-        public ICollection<Amenity> Amenities { get; set; } = new List<Amenity>();
+        public ICollection<HotelAmenity> HotelAmenities { get; set; } = new List<HotelAmenity>();
     }
 }

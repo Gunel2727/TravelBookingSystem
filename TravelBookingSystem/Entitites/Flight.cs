@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TBS.Domain.Common;
+using TBS.Domain.Enums;
 
 namespace TBS.Domain.Entitites
 {
@@ -20,5 +21,6 @@ namespace TBS.Domain.Entitites
         public Airport DepartureAirport { get; set; } = null!;
         public Guid ArrivalAirportId { get; set; }
         public Airport ArrivalAirport { get; set; } = null!;
+        public FlightStatus Status { get; set; }
     }
 }
