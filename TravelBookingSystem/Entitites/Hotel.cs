@@ -18,5 +18,6 @@ namespace TBS.Domain.Entitites
         public ICollection<Room> Rooms { get; set; } = new List<Room>();
         public ICollection<HotelImage> HotelImages { get; set; } = new List<HotelImage>();
         public ICollection<HotelAmenity> HotelAmenities { get; set; } = new List<HotelAmenity>();
+        public ICollection<Review> Reviews { get; set; } = new List<Review>();
     }
 }

@@ -17,7 +17,9 @@ namespace TBS.Domain.Entitites
         public Guid ApplicationUserId { get; set; }
         public ApplicationUser ApplicationUser { get; set; } = null!;
 
-        public ICollection<Flight> Flights { get; set; }= new List<Flight>();
-        public ICollection<Passenger> Passengers { get; set; } = new List<Passenger>();
+        public ICollection<FlightBookingPassenger> FlightBookingPassengers
+        { get; set; } = new List<FlightBookingPassenger>();
+
+        public ICollection<Payment> Payments { get; set; } = new List<Payment>();
     }
 }

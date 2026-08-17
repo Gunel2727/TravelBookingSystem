@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\onedrive\\desktop\\travelbookingsystem\\travelbookingsystem\\entitites\\flightbooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\entitites\\flightbooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|c:\\users\\gunel\\onedrive\\desktop\\travelbookingsystem\\travelbookingsystem\\entitites\\flightbookingpassenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\entitites\\flightbookingpassenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BBB62E49-C9E1-6657-24E1-4D91E5C3B293}|TBS.Infrastructure\\TBS.Infrastructure.csproj|c:\\users\\gunel\\onedrive\\desktop\\travelbookingsystem\\tbs.infrastructure\\configurations\\countryconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBB62E49-C9E1-6657-24E1-4D91E5C3B293}|TBS.Infrastructure\\TBS.Infrastructure.csproj|solutionrelative:tbs.infrastructure\\configurations\\countryconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FlightBooking.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\FlightBooking.cs",
-              "RelativeDocumentMoniker": "TravelBookingSystem\\Entitites\\FlightBooking.cs",
-              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\FlightBooking.cs",
-              "RelativeToolTip": "TravelBookingSystem\\Entitites\\FlightBooking.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "CountryConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TBS.Infrastructure\\Configurations\\CountryConfiguration.cs",
+              "RelativeDocumentMoniker": "TBS.Infrastructure\\Configurations\\CountryConfiguration.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TBS.Infrastructure\\Configurations\\CountryConfiguration.cs",
+              "RelativeToolTip": "TBS.Infrastructure\\Configurations\\CountryConfiguration.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-14T20:38:57.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FlightBookingPassenger.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\FlightBookingPassenger.cs",
-              "RelativeDocumentMoniker": "TravelBookingSystem\\Entitites\\FlightBookingPassenger.cs",
-              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\FlightBookingPassenger.cs",
-              "RelativeToolTip": "TravelBookingSystem\\Entitites\\FlightBookingPassenger.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-14T20:38:37.929Z",
+              "WhenOpened": "2026-08-17T18:18:01.86Z",
               "EditorCaption": ""
             }
           ]

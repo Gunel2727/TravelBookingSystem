@@ -22,5 +22,8 @@ namespace TBS.Domain.Entitites
         public Guid ArrivalAirportId { get; set; }
         public Airport ArrivalAirport { get; set; } = null!;
         public FlightStatus Status { get; set; }
+
+        public ICollection<FlightBookingPassenger> FlightBookingPassengers
+        { get; set; } = new List<FlightBookingPassenger>();
     }
 }

@@ -12,6 +12,9 @@ namespace TBS.Domain.Entitites
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
         public string ProfileImageUrl { get; set; } = string.Empty;
-       
+        public ICollection<Review> Reviews { get; set; } = new List<Review>();
+        public ICollection<RefreshToken> RefreshTokens { get; set; }
+        = new List<RefreshToken>();
+
     }
 }

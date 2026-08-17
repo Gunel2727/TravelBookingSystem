@@ -20,5 +20,11 @@ namespace TBS.Domain.Entitites
         public string Nationality { get; set; } = string.Empty;
         public DateTime PassportExpiryDate { get; set; }
 
+        public ICollection<FlightBookingPassenger> FlightBookingPassengers
+        { get; set; } = new List<FlightBookingPassenger>();
+
+        public ICollection<HotelBookingRoomPassenger> HotelBookingRoomPassengers
+        { get; set; } = new List<HotelBookingRoomPassenger>();
+
     }
 }
