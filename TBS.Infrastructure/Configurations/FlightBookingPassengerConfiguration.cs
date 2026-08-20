@@ -26,7 +26,7 @@ namespace TBS.Infrastructure.Configurations
             builder.HasOne(fbp => fbp.FlightBooking)
                 .WithMany(fbp => fbp.FlightBookingPassengers)
                 .HasForeignKey(fbp => fbp.FlightBookingId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne(fbp => fbp.Flight)
                 .WithMany(f => f.FlightBookingPassengers)

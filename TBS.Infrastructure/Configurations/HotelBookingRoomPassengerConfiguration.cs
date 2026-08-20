@@ -13,7 +13,17 @@ namespace TBS.Infrastructure.Configurations
     {
         public void Configure(EntityTypeBuilder<HotelBookingRoomPassenger> builder)
         {
-            throw new NotImplementedException();
+            builder.HasKey(hbrp => new { hbrp.HotelBookingRoomId, hbrp.PassengerId });
+
+            builder.HasOne(hbrp => hbrp.HotelBookingRoom)
+                   .WithMany(hbr => hbr.HotelBookingRoomPassengers)
+                   .HasForeignKey(hbrp => hbrp.HotelBookingRoomId)
+                   .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasOne(hbrp => hbrp.Passenger)
+                     .WithMany(p => p.HotelBookingRoomPassengers)
+                     .HasForeignKey(hbrp => hbrp.PassengerId)
+                     .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

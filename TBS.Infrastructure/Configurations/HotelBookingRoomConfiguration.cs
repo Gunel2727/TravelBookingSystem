@@ -23,7 +23,7 @@ namespace TBS.Infrastructure.Configurations
             builder.HasOne(x => x.HotelBooking)
                 .WithMany(x => x.HotelBookingRooms)
                 .HasForeignKey(x => x.HotelBookingId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
         }
     }
