@@ -9,7 +9,7 @@ namespace TBS.Domain.Interfaces
 {
     public interface IHotelRepository:IGenericRepository<Hotel>
     {
-        Task<IList<Hotel>> GetFilteredAync(string? search, Guid? cityId);
+        Task<IList<Hotel>> GetFilteredAsync(string? search, Guid? cityId);
         
     }
 }

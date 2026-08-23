@@ -11,6 +11,8 @@ namespace TBS.Infrastructure.Configurations
 {
     public class AirportConfiguration : IEntityTypeConfiguration<Airport>
     {
+        public static readonly Guid GydAirportId = Guid.Parse("55555555-5555-5555-5555-555555555555");
+        public static readonly Guid IstAirportId = Guid.Parse("66666666-6666-6666-6666-666666666666");
         public void Configure(EntityTypeBuilder<Airport> builder)
         {
             builder.HasKey(x => x.Id);
@@ -30,6 +32,23 @@ namespace TBS.Infrastructure.Configurations
                 .WithMany(x=>x.Airports)
                 .HasForeignKey(x=> x.CityId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasData(
+                new Airport
+                {
+                    Id = GydAirportId,
+                    Name = "Heydar Aliyev International Airport",
+                    Code = "GYD",
+                    CityId = CityConfiguration.BakuId
+                },
+                new Airport
+                {
+                    Id = IstAirportId,
+                    Name = "Istanbul Airport",
+                    Code = "IST",
+                    CityId = CityConfiguration.IstanbulId
+                }
+            );
 
         }
     }

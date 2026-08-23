@@ -13,7 +13,7 @@ namespace TBS.Infrastructure.Configurations
     {
         public void Configure(EntityTypeBuilder<HotelBookingRoom> builder)
         {
-            builder.HasKey(x => new { x.RoomId, x.HotelBookingId });
+            builder.HasKey(x =>x.Id);
 
             builder.HasOne(x => x.Room)
                 .WithMany()

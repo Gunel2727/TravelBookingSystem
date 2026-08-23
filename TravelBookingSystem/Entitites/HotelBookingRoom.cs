@@ -9,7 +9,8 @@ namespace TBS.Domain.Entitites
 {
     public class HotelBookingRoom: AuditableEntity
     {
-        
+        public Guid Id { get; set; }
+
         public Guid RoomId { get; set; }
         public Room Room { get; set; } = null!;
 

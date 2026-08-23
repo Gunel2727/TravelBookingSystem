@@ -11,6 +11,8 @@ namespace TBS.Infrastructure.Configurations
 {
     public class CountryConfiguration : IEntityTypeConfiguration<Country>
     {
+        public static readonly Guid AzerbaijanId = Guid.Parse("11111111-1111-1111-1111-111111111111");
+        public static readonly Guid TurkeyId = Guid.Parse("22222222-2222-2222-2222-222222222222");
         public void Configure(EntityTypeBuilder<Country> builder)
         { 
             builder.HasKey(x => x.Id);
@@ -29,6 +31,11 @@ namespace TBS.Infrastructure.Configurations
 
             builder.HasIndex(x => x.Code)
             .IsUnique();
+
+            builder.HasData(
+                new Country { Id = AzerbaijanId, Name = "Azerbaijan", Code = "AZ" },
+                new Country { Id = TurkeyId, Name = "Turkey", Code = "TR" }
+            );
 
         }
     }

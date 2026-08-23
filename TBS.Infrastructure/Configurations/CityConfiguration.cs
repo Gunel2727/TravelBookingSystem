@@ -11,6 +11,8 @@ namespace TBS.Infrastructure.Configurations
 {
     public class CityConfiguration : IEntityTypeConfiguration<City>
     {
+        public static readonly Guid BakuId = Guid.Parse("33333333-3333-3333-3333-333333333333");
+        public static readonly Guid IstanbulId = Guid.Parse("44444444-4444-4444-4444-444444444444");
         public void Configure(EntityTypeBuilder<City> builder)
         {
             builder.HasKey(x => x.Id);
@@ -26,6 +28,11 @@ namespace TBS.Infrastructure.Configurations
                 .WithMany(x=>x.Cities)
                 .HasForeignKey(x=>x.CountryId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasData(
+                new City { Id = BakuId, Name = "Baku", CountryId = CountryConfiguration.AzerbaijanId },
+                new City { Id = IstanbulId, Name = "Istanbul", CountryId = CountryConfiguration.TurkeyId }
+            );
         }
     }
 }
