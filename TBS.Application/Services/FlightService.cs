@@ -28,7 +28,8 @@ namespace TBS.Application.Services
             flight.Status = FlightStatus.Scheduled;
             await _unitOfWork.FlightRepository.AddAsync(flight);
             await _unitOfWork.SaveChangesAsync();
-            return _mapper.Map<FlightDto>(flight);
+            var createdFlight = await _unitOfWork.FlightRepository.GetByIdAsync(flight.Id);
+            return _mapper.Map<FlightDto>(createdFlight ?? flight);
         }
 
         public async Task DeleteAsync(Guid id)
@@ -39,24 +40,37 @@ namespace TBS.Application.Services
             await _unitOfWork.SaveChangesAsync();
         }
 
-        public Task<IList<FlightDto>> GetAllAsync()
+        public async Task<IList<FlightDto>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var flights = await _unitOfWork.FlightRepository.GetAllAsync();
+            return _mapper.Map<IList<FlightDto>>(flights);
         }
 
-        public Task<FlightDto> GetByIdAsync(Guid id)
+        public async Task<FlightDto> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var flight = await _unitOfWork.FlightRepository.GetByIdAsync(id);
+            if (flight == null) throw new NotFoundException(ErrorMessages.FlightNotFound);
+            return _mapper.Map<FlightDto>(flight);
+        
         }
 
-        public Task<IList<FlightDto>> GetFilteredAsync(Guid? departureAirportId, Guid? arrivalAirportId, DateTime? departureDate)
+        public async Task<IList<FlightDto>> GetFilteredAsync(FilterFlightDto dto)
         {
-            throw new NotImplementedException();
+            var flights = await _unitOfWork.FlightRepository.GetFilteredAsync(dto.DepartureAirportId, dto.ArrivalAirportId, dto.DepartureDate);
+            return _mapper.Map<IList<FlightDto>>(flights);
         }
 
-        public Task<FlightDto> UpdateAsync(Guid id, UpdateFlightDto dto)
+        public async Task<FlightDto> UpdateAsync(Guid id, UpdateFlightDto dto)
         {
-            throw new NotImplementedException();
+            var flight = await _unitOfWork.FlightRepository.GetByIdAsync(id);
+            if (flight == null) throw new NotFoundException(ErrorMessages.FlightNotFound);
+
+            _mapper.Map(dto, flight);
+
+            _unitOfWork.FlightRepository.Update(flight);
+            await _unitOfWork.SaveChangesAsync();
+
+            return _mapper.Map<FlightDto>(flight);
         }
     }
 }

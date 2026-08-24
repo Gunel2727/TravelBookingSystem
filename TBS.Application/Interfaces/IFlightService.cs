@@ -14,9 +14,6 @@ namespace TBS.Application.Interfaces
         Task<FlightDto> AddAsync(CreateFlightDto dto);
         Task<FlightDto> UpdateAsync(Guid id, UpdateFlightDto dto);
         Task DeleteAsync(Guid id);
-        Task<IList<FlightDto>> GetFilteredAsync(
-            Guid? departureAirportId,
-            Guid? arrivalAirportId,
-            DateTime? departureDate);
+        Task<IList<FlightDto>> GetFilteredAsync(FilterFlightDto dto);
     }
 }

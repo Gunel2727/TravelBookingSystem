@@ -45,4 +45,10 @@ namespace TBS.Application.DTOs.Flight
         public decimal Price { get; set; }
         public int StopCount { get; set; }
     }
+    public class FilterFlightDto
+    {
+        public Guid? DepartureAirportId { get; set; }
+        public Guid? ArrivalAirportId { get; set; }
+        public DateTime? DepartureDate { get; set; }
+    }
 }
