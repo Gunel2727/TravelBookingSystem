@@ -11,6 +11,7 @@ namespace TBS.Application.Common
         public const string FlightNotFound = "Axtarılan uçuş tapılmadı.";
         public const string AirportNotFound = "Hava limanı tapılmadı.";
         public const string InvalidFlightDates = "Eniş tarixi qalxış tarixindən əvvəl ola bilməz.";
+        public const string HotelNotFound = "Axtarılan otel tapılmadı.";
     }
 }
 

@@ -39,5 +39,23 @@ namespace TBS.Infrastructure.Repositories
 
             return await query.ToListAsync();
         }
+        public new async Task<Hotel?> GetByIdAsync(Guid id)
+        {
+            return await _context.Hotels
+                .Include(h => h.City)
+                .Include(h => h.Rooms)
+                .Include(h => h.HotelImages)
+                .Include(h => h.HotelAmenities)
+                .Include(h => h.Reviews)
+                .FirstOrDefaultAsync(h => h.Id == id);
+        }
+        public new async Task<IList<Hotel>> GetAllAsync()
+        {
+            return await _context.Hotels
+                .Include(h => h.City)
+                .Include(h => h.HotelImages)
+                .AsNoTracking()
+                .ToListAsync();
+        }
     }
 }

@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "C:\\Projects\\TravelBookingSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{032BCBC6-207C-3A37-7847-31C86B69FF35}|TBS.Api\\TBS.Api.csproj|c:\\projects\\travelbookingsystem\\tbs.api\\controllers\\hotelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{032BCBC6-207C-3A37-7847-31C86B69FF35}|TBS.Api\\TBS.Api.csproj|solutionrelative:tbs.api\\controllers\\hotelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\interfaces\\ihotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\interfaces\\ihotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBB62E49-C9E1-6657-24E1-4D91E5C3B293}|TBS.Infrastructure\\TBS.Infrastructure.csproj|c:\\projects\\travelbookingsystem\\tbs.infrastructure\\repositories\\hotelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBB62E49-C9E1-6657-24E1-4D91E5C3B293}|TBS.Infrastructure\\TBS.Infrastructure.csproj|solutionrelative:tbs.infrastructure\\repositories\\hotelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{032BCBC6-207C-3A37-7847-31C86B69FF35}|TBS.Api\\TBS.Api.csproj|c:\\projects\\travelbookingsystem\\tbs.api\\controllers\\flightcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{032BCBC6-207C-3A37-7847-31C86B69FF35}|TBS.Api\\TBS.Api.csproj|solutionrelative:tbs.api\\controllers\\flightcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\interfaces\\iflightservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\interfaces\\iflightservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\services\\hotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\services\\hotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\services\\flightservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\services\\flightservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\dtos\\flight\\flightdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\dtos\\flight\\flightdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|c:\\projects\\travelbookingsystem\\travelbookingsystem\\entitites\\hotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\entitites\\hotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|c:\\projects\\travelbookingsystem\\travelbookingsystem\\entitites\\flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\entitites\\flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\common\\errormessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\common\\errormessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +42,110 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IFlightService.cs",
-              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Interfaces\\IFlightService.cs",
-              "RelativeDocumentMoniker": "TBS.Application\\Interfaces\\IFlightService.cs",
-              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Interfaces\\IFlightService.cs",
-              "RelativeToolTip": "TBS.Application\\Interfaces\\IFlightService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T19:25:07.577Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "FlightDto.cs",
-              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\DTOs\\Flight\\FlightDto.cs",
-              "RelativeDocumentMoniker": "TBS.Application\\DTOs\\Flight\\FlightDto.cs",
-              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\DTOs\\Flight\\FlightDto.cs",
-              "RelativeToolTip": "TBS.Application\\DTOs\\Flight\\FlightDto.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAA6wDQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T19:20:33.58Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "FlightController.cs",
               "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Api\\Controllers\\FlightController.cs",
               "RelativeDocumentMoniker": "TBS.Api\\Controllers\\FlightController.cs",
               "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Api\\Controllers\\FlightController.cs",
               "RelativeToolTip": "TBS.Api\\Controllers\\FlightController.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAA+wDoAAABDAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T19:09:10.798Z",
+              "WhenOpened": "2026-08-25T18:21:24.619Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Flight.cs",
-              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\Flight.cs",
-              "RelativeDocumentMoniker": "TravelBookingSystem\\Entitites\\Flight.cs",
-              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\Flight.cs",
-              "RelativeToolTip": "TravelBookingSystem\\Entitites\\Flight.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "HotelController.cs",
+              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Api\\Controllers\\HotelController.cs",
+              "RelativeDocumentMoniker": "TBS.Api\\Controllers\\HotelController.cs",
+              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Api\\Controllers\\HotelController.cs",
+              "RelativeToolTip": "TBS.Api\\Controllers\\HotelController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAgwC8AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T18:50:37.711Z",
+              "WhenOpened": "2026-08-25T18:21:12.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Hotel.cs",
+              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\Hotel.cs",
+              "RelativeDocumentMoniker": "TravelBookingSystem\\Entitites\\Hotel.cs",
+              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\Hotel.cs",
+              "RelativeToolTip": "TravelBookingSystem\\Entitites\\Hotel.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-25T18:05:56.91Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "HotelRepository.cs",
+              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Infrastructure\\Repositories\\HotelRepository.cs",
+              "RelativeDocumentMoniker": "TBS.Infrastructure\\Repositories\\HotelRepository.cs",
+              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Infrastructure\\Repositories\\HotelRepository.cs",
+              "RelativeToolTip": "TBS.Infrastructure\\Repositories\\HotelRepository.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAmwCkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-25T18:08:07.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IHotelService.cs",
+              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Interfaces\\IHotelService.cs",
+              "RelativeDocumentMoniker": "TBS.Application\\Interfaces\\IHotelService.cs",
+              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Interfaces\\IHotelService.cs",
+              "RelativeToolTip": "TBS.Application\\Interfaces\\IHotelService.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAAsAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-25T18:01:56.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ErrorMessages.cs",
+              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Common\\ErrorMessages.cs",
+              "RelativeDocumentMoniker": "TBS.Application\\Common\\ErrorMessages.cs",
+              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Common\\ErrorMessages.cs",
+              "RelativeToolTip": "TBS.Application\\Common\\ErrorMessages.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-25T18:10:47.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "FlightService.cs",
               "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Services\\FlightService.cs",
               "RelativeDocumentMoniker": "TBS.Application\\Services\\FlightService.cs",
               "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Services\\FlightService.cs",
               "RelativeToolTip": "TBS.Application\\Services\\FlightService.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAwwDwAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T17:51:51.118Z",
+              "WhenOpened": "2026-08-25T18:03:57.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HotelService.cs",
+              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Services\\HotelService.cs",
+              "RelativeDocumentMoniker": "TBS.Application\\Services\\HotelService.cs",
+              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Services\\HotelService.cs",
+              "RelativeToolTip": "TBS.Application\\Services\\HotelService.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAADwv0QAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-25T18:03:37.21Z",
               "EditorCaption": ""
             }
           ]
