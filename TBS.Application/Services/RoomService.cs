@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TBS.Application.Common;
 using TBS.Application.DTOs.Room;
 using TBS.Application.Interfaces;
+using TBS.Domain.Entitites;
 using TBS.Domain.Interfaces;
 
 namespace TBS.Application.Services
@@ -20,34 +22,54 @@ namespace TBS.Application.Services
             _mapper = mapper;
         }
 
-        public Task<RoomDto> AddAsync(CreateRoomDto dto)
+        public async Task<RoomDto> AddAsync(CreateRoomDto dto)
         {
-            throw new NotImplementedException();
+            var room = _mapper.Map<Room>(dto);
+            await _unitOfWork.RoomRepository.AddAsync(room);
+            await _unitOfWork.SaveChangesAsync();
+            var createdRoom=await _unitOfWork.RoomRepository.GetByIdAsync(room.Id);
+            return _mapper.Map<RoomDto>(createdRoom?? room);
         }
 
-        public Task DeleteAsync(Guid id)
+        public async Task DeleteAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var room = await _unitOfWork.RoomRepository.GetByIdAsync(id);
+            if(room==null)
+            {
+                throw new NotFoundException(ErrorMessages.RoomNotFound);
+            }
+            _unitOfWork.RoomRepository.Delete(room);
+            await _unitOfWork.SaveChangesAsync();
         }
 
-        public Task<IList<RoomDto>> GetAllAsync()
+        public async Task<IList<RoomDto>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var rooms=await _unitOfWork.RoomRepository.GetAllAsync();
+            return _mapper.Map<IList<RoomDto>>(rooms);
         }
 
-        public Task<RoomDto> GetByIdAsync(Guid id)
+        public async Task<RoomDto> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var room = await _unitOfWork.RoomRepository.GetByIdAsync(id);
+            if (room == null) throw new NotFoundException(ErrorMessages.RoomNotFound);
+            return _mapper.Map<RoomDto>(room);
         }
 
-        public Task<IList<RoomDto>> GetFilteredAsync(FilterRoomDto dto)
+        public async Task<IList<RoomDto>> GetFilteredAsync(FilterRoomDto dto)
         {
-            throw new NotImplementedException();
+            var rooms = await _unitOfWork.RoomRepository.GetFilteredAsync(dto.HotelId,dto.MinPriceForNight,dto.MaxPriceForNight,dto.MinCapacity);
+            return _mapper.Map<IList<RoomDto>>(rooms);
         }
 
-        public Task<RoomDto> UpdateAsync(UpdateRoomDto dto, Guid id)
+        public async Task<RoomDto> UpdateAsync(Guid id,UpdateRoomDto dto)
         {
-            throw new NotImplementedException();
+            var room = await _unitOfWork.RoomRepository.GetByIdAsync(id);
+            if(room==null) throw new NotFoundException(ErrorMessages.RoomNotFound);
+            _mapper.Map(dto,room);
+           
+            await _unitOfWork.SaveChangesAsync();
+            var updatedRoom = await _unitOfWork.RoomRepository.GetByIdAsync(id);
+            return _mapper.Map<RoomDto>(updatedRoom??room);
         }
     }
 }

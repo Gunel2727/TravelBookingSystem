@@ -66,11 +66,10 @@ namespace TBS.Application.Services
             if (flight == null) throw new NotFoundException(ErrorMessages.FlightNotFound);
 
             _mapper.Map(dto, flight);
-
-            _unitOfWork.FlightRepository.Update(flight);
             await _unitOfWork.SaveChangesAsync();
 
-            return _mapper.Map<FlightDto>(flight);
+            var updatedFlight = await _unitOfWork.FlightRepository.GetByIdAsync(id);
+            return _mapper.Map<FlightDto>(updatedFlight ?? flight);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TBS.Application.Interfaces
         Task<RoomDto> GetByIdAsync(Guid id);
         Task<IList<RoomDto>> GetAllAsync();
         Task<RoomDto> AddAsync(CreateRoomDto dto);
-        Task<RoomDto> UpdateAsync(UpdateRoomDto dto,Guid id);
+        Task<RoomDto> UpdateAsync(Guid id,UpdateRoomDto dto);
         Task DeleteAsync(Guid id);
         Task<IList<RoomDto>> GetFilteredAsync(FilterRoomDto dto);
     }
