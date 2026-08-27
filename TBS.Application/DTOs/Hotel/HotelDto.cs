@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TBS.Application.DTOs.Review;
 using TBS.Application.DTOs.Room;
 
 namespace TBS.Application.DTOs.Hotel

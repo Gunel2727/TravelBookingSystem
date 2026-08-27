@@ -8,6 +8,9 @@ using TBS.Application.DTOs.Airport;
 using TBS.Application.DTOs.City;
 using TBS.Application.DTOs.Country;
 using TBS.Application.DTOs.Flight;
+using TBS.Application.DTOs.Hotel;
+using TBS.Application.DTOs.Review;
+using TBS.Application.DTOs.Room;
 using TBS.Domain.Entitites;
 
 namespace TBS.Application.Profiles
@@ -28,6 +31,26 @@ namespace TBS.Application.Profiles
 
             CreateMap<CreateFlightDto, Flight>();
             CreateMap<UpdateFlightDto, Flight>();
+
+            CreateMap<Room, RoomDto>()
+                .ForMember(dest => dest.HotelName, opt => opt.MapFrom(src => src.Hotel.Name));
+               
+            CreateMap<CreateRoomDto, Room>();
+            CreateMap<UpdateRoomDto, Room>();
+
+            CreateMap<RoomImage, RoomImageDto>();
+
+            CreateMap<Review, ReviewDto>();
+
+            CreateMap<HotelAmenity,HotelAmenityDto>();
+
+            CreateMap<Hotel, HotelDto>()
+                .ForMember(dest => dest.CityName, opt => opt.MapFrom(src => src.City.Name));
+            CreateMap<CreateHotelDto, Hotel>();
+            CreateMap<UpdateHotelDto, Hotel>();
+
+            CreateMap<HotelImage, HotelImageDto>();
+
         }
      }
 }

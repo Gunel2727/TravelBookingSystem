@@ -18,13 +18,17 @@ namespace TBS.Infrastructure.Repositories
         }
 
         private IHotelRepository _hotelRepository;
-        private IFlightRepository _flightRepository; 
+        private IFlightRepository _flightRepository;
+        private IRoomRepository _roomRepository;
 
         public IFlightRepository FlightRepository =>
             _flightRepository ??= new FlightRepository(_context);
 
         public IHotelRepository HotelRepository =>
             _hotelRepository ??= new HotelRepository(_context);
+
+        public IRoomRepository RoomRepository => 
+            _roomRepository ??= new RoomRepository(_context);
 
         public void Dispose()
         {

@@ -10,6 +10,7 @@ namespace TBS.Domain.Interfaces
     {
         IFlightRepository FlightRepository { get; }
         IHotelRepository HotelRepository { get; }
+        IRoomRepository RoomRepository { get; }
 
         Task<int> SaveChangesAsync();
     }

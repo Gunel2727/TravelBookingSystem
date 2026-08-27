@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TBS.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90b31642340a0d383ba90629d8f90d403600ede6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7754d0b4cedc12ef26f3844b7c5844b6f990c78")]
 [assembly: System.Reflection.AssemblyProductAttribute("TBS.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TBS.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

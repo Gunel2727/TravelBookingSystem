@@ -23,6 +23,7 @@ namespace TBS.Infrastructure
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IFlightRepository, FlightRepository>();
             services.AddScoped<IHotelRepository, HotelRepository>();
+            services.AddScoped<IRoomRepository, RoomRepository>();
 
             return services;
         }

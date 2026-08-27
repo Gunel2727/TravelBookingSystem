@@ -19,4 +19,32 @@ namespace TBS.Application.DTOs.Room
         public string HotelName { get; set;} = string.Empty;
         public ICollection<RoomImageDto> RoomImages { get; set; } = new List<RoomImageDto>();
     }
+    public class CreateRoomDto
+    {
+        public string RoomNumber { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public decimal PriceForNight { get; set; }
+        public int Capacity { get; set; }
+        public string RoomType { get; set; } = string.Empty;
+        public Guid HotelId { get; set; }
+    }
+    public class UpdateRoomDto
+    {
+        public string RoomNumber { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public decimal PriceForNight { get; set; }
+        public int Capacity { get; set; }
+        public string RoomType { get; set; } = string.Empty;
+    }
+    public class FilterRoomDto
+    {
+        
+        public decimal? MinPriceForNight { get; set; }
+        public decimal? MaxPriceForNight { get; set; }
+        public int? MinCapacity { get; set; }
+        public Guid? HotelId { get; set; }
+    }
+
 }
