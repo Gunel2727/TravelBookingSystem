@@ -22,3 +22,7 @@ C:\Projects\TravelBookingSystem\TBS.Application\obj\Debug\net8.0\TBS.Application
 C:\Projects\TravelBookingSystem\TBS.Application\obj\Debug\net8.0\refint\TBS.Application.dll
 C:\Projects\TravelBookingSystem\TBS.Application\obj\Debug\net8.0\TBS.Application.pdb
 C:\Projects\TravelBookingSystem\TBS.Application\obj\Debug\net8.0\ref\TBS.Application.dll
+C:\Projects\TravelBookingSystem\TBS.Application\bin\Debug\net8.0\TBS.Domain.dll
+C:\Projects\TravelBookingSystem\TBS.Application\bin\Debug\net8.0\TBS.Domain.pdb
+C:\Projects\TravelBookingSystem\TBS.Application\obj\Debug\net8.0\TBS.Application.csproj.AssemblyReference.cache
+C:\Projects\TravelBookingSystem\TBS.Application\obj\Debug\net8.0\TBS.Appl.ABFE9247.Up2Date

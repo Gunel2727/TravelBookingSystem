@@ -148,3 +148,13 @@ C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\ru\Microsoft.CodeAnalys
 C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\AutoMapper.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll

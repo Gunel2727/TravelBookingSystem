@@ -11,6 +11,8 @@ namespace TBS.Domain.Entitites
     {
         public Guid Id { get; set; }
 
+        public decimal PriceForNight { get; set; }
+
         public Guid RoomId { get; set; }
         public Room Room { get; set; } = null!;
 
