@@ -699,6 +699,9 @@ namespace TBS.Infrastructure.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
 
+                    b.Property<decimal>("PriceForNight")
+                        .HasColumnType("numeric");
+
                     b.Property<Guid>("RoomId")
                         .HasColumnType("uuid");
 

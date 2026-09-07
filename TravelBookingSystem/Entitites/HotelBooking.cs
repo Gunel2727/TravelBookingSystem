@@ -11,6 +11,8 @@ namespace TBS.Domain.Entitites
     public class HotelBooking: AuditableEntity
     {
         public string ConfirmationNumber { get; set; } = string.Empty;
+        public decimal TotalPrice { get; set; }
+
         public DateTime BookingDate { get; set; }
         public DateTime CheckInDate { get; set; }
         public DateTime CheckOutDate { get; set; }

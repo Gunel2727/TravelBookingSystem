@@ -9,6 +9,7 @@ using TBS.Application.DTOs.City;
 using TBS.Application.DTOs.Country;
 using TBS.Application.DTOs.Flight;
 using TBS.Application.DTOs.Hotel;
+using TBS.Application.DTOs.HotelBooking;
 using TBS.Application.DTOs.Review;
 using TBS.Application.DTOs.Room;
 using TBS.Domain.Entitites;
@@ -50,6 +51,16 @@ namespace TBS.Application.Profiles
             CreateMap<UpdateHotelDto, Hotel>();
 
             CreateMap<HotelImage, HotelImageDto>();
+
+            CreateMap<HotelBooking, HotelBookingDto>()
+                .ForMember(dest => dest.ApplicationUserName, opt => opt.MapFrom(src => src.ApplicationUser.UserName))
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
+
+            CreateMap<CreateHotelBookingDto, HotelBooking>();
+            CreateMap<UpdateHotelBookingDto, HotelBooking>();
+
+            CreateMap<HotelBookingRoom, HotelBookingRoomDto>()
+                .ForMember(dest => dest.RoomName, opt => opt.MapFrom(src => src.Room.Name));
 
         }
      }

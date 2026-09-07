@@ -18,6 +18,7 @@ namespace TBS.Application.DTOs.HotelBooking
         public DateTime CheckOutDate { get; set; }
         public string Status { get; set; } = string.Empty;
         public Guid ApplicationUserId { get; set; }
+        public decimal TotalPrice { get; set; }
         public string ApplicationUserName { get; set; }= string.Empty;
         public ICollection<HotelBookingRoomDto> HotelBookingRooms
         { get; set; } = new List<HotelBookingRoomDto>();
@@ -31,6 +32,17 @@ namespace TBS.Application.DTOs.HotelBooking
         public DateTime CheckInDate { get; set; }
         public DateTime CheckOutDate { get; set; }
       
+        public Guid ApplicationUserId { get; set; }
+
+    }
+    public class UpdateHotelBookingDto
+    {
+        public Guid Id { get; set; }
+
+        public List<Guid> RoomIds { get; set; } = new List<Guid>();
+        public DateTime CheckInDate { get; set; }
+        public DateTime CheckOutDate { get; set; }
+
         public Guid ApplicationUserId { get; set; }
 
     }

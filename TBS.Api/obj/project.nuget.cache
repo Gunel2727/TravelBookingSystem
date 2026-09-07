@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "k+VlQ7M+rGQ=",
+  "dgSpecHash": "k9mJ4PrQ8Co=",
   "success": true,
-  "projectFilePath": "C:\\Projects\\TravelBookingSystem\\TBS.Api\\TBS.Api.csproj",
+  "projectFilePath": "C:\\Projects\\TravelBookingSystem\\TBS.API\\TBS.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gunel\\.nuget\\packages\\automapper\\16.2.0\\automapper.16.2.0.nupkg.sha512",
     "C:\\Users\\gunel\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
