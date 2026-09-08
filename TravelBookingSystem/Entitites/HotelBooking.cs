@@ -13,7 +13,7 @@ namespace TBS.Domain.Entitites
         public string ConfirmationNumber { get; set; } = string.Empty;
         public decimal TotalPrice { get; set; }
 
-        public DateTime BookingDate { get; set; }
+        public DateTime BookingDate { get; set; } = DateTime.UtcNow;
         public DateTime CheckInDate { get; set; }
         public DateTime CheckOutDate { get; set; }
         public BookingStatus Status { get; set; }

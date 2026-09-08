@@ -1,6 +1,7 @@
 using TBS.Api.Middlewares;
 using TBS.Application;
 using TBS.Infrastructure;
+using TBS.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,4 +27,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
+
 app.Run();
+

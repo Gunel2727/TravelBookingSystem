@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\TravelBookingSystem\\TBS.API\\TBS.Api.csproj": {}
+    "C:\\Projects\\TravelBookingSystem\\TBS.Api\\TBS.Api.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\TravelBookingSystem\\TBS.API\\TBS.Api.csproj": {
+    "C:\\Projects\\TravelBookingSystem\\TBS.Api\\TBS.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\TravelBookingSystem\\TBS.API\\TBS.Api.csproj",
+        "projectUniqueName": "C:\\Projects\\TravelBookingSystem\\TBS.Api\\TBS.Api.csproj",
         "projectName": "TBS.Api",
-        "projectPath": "C:\\Projects\\TravelBookingSystem\\TBS.API\\TBS.Api.csproj",
+        "projectPath": "C:\\Projects\\TravelBookingSystem\\TBS.Api\\TBS.Api.csproj",
         "packagesPath": "C:\\Users\\gunel\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\TravelBookingSystem\\TBS.API\\obj\\",
+        "outputPath": "C:\\Projects\\TravelBookingSystem\\TBS.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
