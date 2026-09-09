@@ -71,6 +71,13 @@ namespace TBS.Application.Services
         {
             var hotelBooking = await _unitOfWork.HotelBookingRepository.GetByIdAsync(id);
             if (hotelBooking == null) throw new NotFoundException(ErrorMessages.HotelBookingNotFound);
+
+            if(hotelBooking.Status == BookingStatus.Cancelled)
+            {
+                throw new BadRequestException("Rezervasiya artıq ləğv edilib.");
+            }
+            if (hotelBooking.CheckInDate <= DateTime.UtcNow)
+                throw new BadRequestException("Giriş tarixi başlamış və ya keçmiş bronlar ləğv edilə bilməz.");
             hotelBooking.Status = BookingStatus.Cancelled;
             _unitOfWork.HotelBookingRepository.Update(hotelBooking);
             await _unitOfWork.SaveChangesAsync();

@@ -28,7 +28,7 @@ namespace TBS.Infrastructure.Repositories
             return !hasConflict;
         }
 
-        public new async Task<HotelBooking?> GetByIdAsync(Guid id)
+        public override async Task<HotelBooking?> GetByIdAsync(Guid id)
         {
             return await _context.HotelBookings
                 .Include(b => b.HotelBookingRooms)
@@ -36,6 +36,17 @@ namespace TBS.Infrastructure.Repositories
                 .Include(b => b.Payments)
                 .Include(b => b.ApplicationUser)
                 .FirstOrDefaultAsync(b => b.Id == id);
+        }
+
+        public override async Task<IList<HotelBooking>> GetAllAsync()
+        {
+            return await _context.HotelBookings
+                .AsNoTracking()
+                .Include(b => b.HotelBookingRooms)
+                .ThenInclude(br => br.Room)
+                
+                .Include(b => b.ApplicationUser)
+                .ToListAsync();
         }
     }
 }

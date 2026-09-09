@@ -12,6 +12,7 @@ namespace TBS.Domain.Interfaces
         IHotelRepository HotelRepository { get; }
         IRoomRepository RoomRepository { get; }
         IHotelBookingRepository HotelBookingRepository { get; }
+        IPaymentRepository PaymentRepository { get; }
 
         Task<int> SaveChangesAsync();
     }

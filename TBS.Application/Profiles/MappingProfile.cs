@@ -10,6 +10,7 @@ using TBS.Application.DTOs.Country;
 using TBS.Application.DTOs.Flight;
 using TBS.Application.DTOs.Hotel;
 using TBS.Application.DTOs.HotelBooking;
+using TBS.Application.DTOs.Payment;
 using TBS.Application.DTOs.Review;
 using TBS.Application.DTOs.Room;
 using TBS.Domain.Entitites;
@@ -61,6 +62,14 @@ namespace TBS.Application.Profiles
 
             CreateMap<HotelBookingRoom, HotelBookingRoomDto>()
                 .ForMember(dest => dest.RoomName, opt => opt.MapFrom(src => src.Room.Name));
+
+            CreateMap<Payment, PaymentDto>()
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()))
+                .ForMember(dest => dest.PaymentMethod, opt => opt.MapFrom(src => src.PaymentMethod.ToString()))
+                .ForMember(dest => dest.Currency, opt => opt.MapFrom(src => src.Currency.ToString()));
+
+            CreateMap<CreatePaymentDto, Payment>();
+            CreateMap<UpdatePaymentDto, Payment>();
 
         }
      }

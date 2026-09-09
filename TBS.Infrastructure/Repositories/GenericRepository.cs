@@ -20,28 +20,28 @@ namespace TBS.Infrastructure.Repositories
             _dbSet = _context.Set<T>();
         }
 
-        public async Task AddAsync(T entity)
+        public virtual async Task AddAsync(T entity)
         {
            await _dbSet.AddAsync(entity);
         }
 
-        public void Delete(T entity)
+        public virtual void Delete(T entity)
         {
             _dbSet.Remove(entity);
         }
 
-        public async Task<IList<T>> GetAllAsync()
+        public virtual async Task<IList<T>> GetAllAsync()
         {
             return await _dbSet.AsNoTracking().ToListAsync();
         }
         
 
-        public async Task<T?> GetByIdAsync(Guid id)
+        public virtual async Task<T?> GetByIdAsync(Guid id)
         {
             return await _dbSet.FindAsync(id);
         }
 
-        public void Update(T entity)
+        public virtual void Update(T entity)
         {
             _dbSet.Update(entity);
         }

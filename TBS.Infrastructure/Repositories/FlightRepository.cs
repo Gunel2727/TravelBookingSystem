@@ -49,7 +49,7 @@ namespace TBS.Infrastructure.Repositories
             return await query.ToListAsync();
         }
 
-        public new async Task<Flight?> GetByIdAsync(Guid id)
+        public override async Task<Flight?> GetByIdAsync(Guid id)
         {
             return await _context.Flights
                 .Include(f => f.ArrivalAirport)
@@ -58,7 +58,7 @@ namespace TBS.Infrastructure.Repositories
                 .FirstOrDefaultAsync(f => f.Id == id);
         }
 
-        public new async Task<IList<Flight>> GetAllAsync()
+        public override async Task<IList<Flight>> GetAllAsync()
         {
             return await _context.Flights
                 .Include(f => f.ArrivalAirport)

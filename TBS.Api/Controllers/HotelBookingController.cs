@@ -38,7 +38,7 @@ namespace TBS.Api.Controllers
             return StatusCode(201, ResponseModel<HotelBookingDto>.Created(booking));
         }
 
-        [HttpDelete("{id}")]
+        [HttpPatch("{id:guid}/cancel")]
         public async Task<IActionResult> CancelBooking(Guid id, CancellationToken cancellationToken)
         {
             await _hotelBookingService.CancelBookingAsync(id, cancellationToken);

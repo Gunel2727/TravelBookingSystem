@@ -21,6 +21,7 @@ namespace TBS.Infrastructure.Repositories
         private IFlightRepository _flightRepository;
         private IRoomRepository _roomRepository;
         private IHotelBookingRepository _hotelBookingRepository;
+        private IPaymentRepository _paymentRepository;
 
         public IFlightRepository FlightRepository =>
             _flightRepository ??= new FlightRepository(_context);
@@ -33,6 +34,9 @@ namespace TBS.Infrastructure.Repositories
 
         public IHotelBookingRepository HotelBookingRepository => 
             _hotelBookingRepository ??= new HotelBookingRepository(_context);
+
+        public IPaymentRepository PaymentRepository =>
+            _paymentRepository ??= new PaymentRepository(_context);
 
         public void Dispose()
         {

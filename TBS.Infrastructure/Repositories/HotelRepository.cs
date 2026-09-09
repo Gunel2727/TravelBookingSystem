@@ -39,7 +39,7 @@ namespace TBS.Infrastructure.Repositories
 
             return await query.ToListAsync();
         }
-        public new async Task<Hotel?> GetByIdAsync(Guid id)
+        public override async Task<Hotel?> GetByIdAsync(Guid id)
         {
             return await _context.Hotels
                 .Include(h => h.City)
@@ -49,7 +49,7 @@ namespace TBS.Infrastructure.Repositories
                 .Include(h => h.Reviews)
                 .FirstOrDefaultAsync(h => h.Id == id);
         }
-        public new async Task<IList<Hotel>> GetAllAsync()
+        public override async Task<IList<Hotel>> GetAllAsync()
         {
             return await _context.Hotels
                 .Include(h => h.City)

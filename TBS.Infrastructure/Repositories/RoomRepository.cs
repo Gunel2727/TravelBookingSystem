@@ -42,14 +42,14 @@ namespace TBS.Infrastructure.Repositories
             }
             return await query.ToListAsync();
         }
-        public new async Task<Room?> GetByIdAsync(Guid id)
+        public override async Task<Room?> GetByIdAsync(Guid id)
         {
             return await _context.Rooms
                 .Include(r => r.Hotel)
                 .Include(r => r.RoomImages)
                 .FirstOrDefaultAsync(r => r.Id == id);
         }
-        public new async Task<IList<Room>> GetAllAsync()
+        public override async Task<IList<Room>> GetAllAsync()
         {
             return await _context.Rooms
                 .Include(r => r.Hotel)
