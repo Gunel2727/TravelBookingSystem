@@ -20,6 +20,7 @@ namespace TBS.Application
             services.AddScoped<IHotelService, HotelService>();
             services.AddScoped<IRoomService, RoomService>();
             services.AddScoped<IHotelBookingService, HotelBookingService>();
+            services.AddScoped<IPaymentService, PaymentService>();
 
 
             return services;
