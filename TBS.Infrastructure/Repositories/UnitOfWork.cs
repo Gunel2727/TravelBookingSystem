@@ -22,6 +22,7 @@ namespace TBS.Infrastructure.Repositories
         private IRoomRepository _roomRepository;
         private IHotelBookingRepository _hotelBookingRepository;
         private IPaymentRepository _paymentRepository;
+        private IFlightBookingRepository _flightBookingRepository;
 
         public IFlightRepository FlightRepository =>
             _flightRepository ??= new FlightRepository(_context);
@@ -38,14 +39,17 @@ namespace TBS.Infrastructure.Repositories
         public IPaymentRepository PaymentRepository =>
             _paymentRepository ??= new PaymentRepository(_context);
 
+        public IFlightBookingRepository FlightBookingRepository => 
+            _flightBookingRepository ??= new FlightBookingRepository(_context);
+
         public void Dispose()
         {
            _context.Dispose();
         }
 
-        public async Task<int> SaveChangesAsync()
+        public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            return await _context.SaveChangesAsync();
+            return await _context.SaveChangesAsync(cancellationToken);
         }
     }
 }

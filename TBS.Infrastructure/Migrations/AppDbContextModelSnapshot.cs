@@ -388,6 +388,9 @@ namespace TBS.Infrastructure.Migrations
                     b.Property<DateTime>("ArrivalTime")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<int>("AvailableSeats")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
@@ -474,11 +477,17 @@ namespace TBS.Infrastructure.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
+                    b.Property<Guid>("FlightId")
+                        .HasColumnType("uuid");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
 
                     b.Property<int>("Status")
                         .HasColumnType("integer");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("numeric");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -496,6 +505,8 @@ namespace TBS.Infrastructure.Migrations
 
                     b.HasIndex("FlightBookingNumber")
                         .IsUnique();
+
+                    b.HasIndex("FlightId");
 
                     b.ToTable("FlightBookings");
                 });
@@ -1196,7 +1207,15 @@ namespace TBS.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("TBS.Domain.Entitites.Flight", "Flight")
+                        .WithMany()
+                        .HasForeignKey("FlightId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("ApplicationUser");
+
+                    b.Navigation("Flight");
                 });
 
             modelBuilder.Entity("TBS.Domain.Entitites.FlightBookingPassenger", b =>

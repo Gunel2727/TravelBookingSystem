@@ -11,6 +11,7 @@ namespace TBS.Application.DTOs.Flight
     {
         public Guid Id { get; set; }
         public string FlightNumber { get; set; } = string.Empty;
+        public int AvailableSeats { get; set; }
         public Guid DepartureAirportId { get; set; }
         public string DepartureAirportName { get; set; } = string.Empty;
         public Guid ArrivalAirportId { get; set; }
@@ -26,6 +27,7 @@ namespace TBS.Application.DTOs.Flight
     public class CreateFlightDto
     {
         public string FlightNumber { get; set; } = string.Empty;
+        public int AvailableSeats { get; set; }
         public Guid DepartureAirportId { get; set; }
         public Guid ArrivalAirportId { get; set; }
         public Guid AirlineId { get; set; }
@@ -37,6 +39,7 @@ namespace TBS.Application.DTOs.Flight
     public class UpdateFlightDto
     {
         public string FlightNumber { get; set; } = string.Empty;
+        public int AvailableSeats { get; set; }
         public Guid DepartureAirportId { get; set; }
         public Guid ArrivalAirportId { get; set; }
         public Guid AirlineId { get; set; }

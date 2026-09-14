@@ -26,6 +26,7 @@ namespace TBS.Infrastructure
             services.AddScoped<IRoomRepository, RoomRepository>();
             services.AddScoped<IHotelBookingRepository, HotelBookingRepository>();
             services.AddScoped<IPaymentRepository, PaymentRepository>();
+            services.AddScoped<IFlightBookingRepository, FlightBookingRepository>();
 
             return services;
         }

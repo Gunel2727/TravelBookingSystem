@@ -14,8 +14,11 @@ namespace TBS.Domain.Entitites
         public string FlightBookingNumber { get; set; }=string.Empty;
         public DateTime BookingDate { get; set; }
         public BookingStatus Status { get; set; }
+        public decimal TotalPrice { get; set; }
         public Guid ApplicationUserId { get; set; }
         public ApplicationUser ApplicationUser { get; set; } = null!;
+        public Guid FlightId { get; set; }
+        public Flight Flight { get; set; } = null!;
 
         public ICollection<FlightBookingPassenger> FlightBookingPassengers
         { get; set; } = new List<FlightBookingPassenger>();

@@ -15,6 +15,7 @@ namespace TBS.Domain.Entitites
         public DateTime ArrivalTime { get; set; }
         public decimal Price { get; set; }
         public int StopCount { get; set; }
+        public int AvailableSeats { get; set; }
         public Guid AirlineId { get; set; }
         public Airline Airline { get; set; } = null!;
         public Guid DepartureAirportId { get; set; }

@@ -18,6 +18,7 @@ namespace TBS.Application.Common
         public const string CheckInDateCannotBeInThePast = "Giriş tarixi keçmiş tarix ola bilməz";
         public const string CheckOutDateMustBeAfterCheckInDate = "Çıxış tarixi giriş tarixindən sonra olmalıdır";
         public const string PaymentNotFound = "Axtarılan ödəniş tapılmadı.";
+        public const string FlightBookingNotFound = "Axtarılan uçuş rezervasiyası tapılmadı.";
     }
 }
 
