@@ -8,8 +8,8 @@ namespace TBS.Domain.Interfaces
 {
     public interface IGenericRepository<T> where T : class
     {
-        Task<T?> GetByIdAsync(Guid id);
-        Task<IList<T>> GetAllAsync();
+        Task<T?> GetByIdAsync(Guid id,CancellationToken cancellationToken=default);
+        Task<IList<T>> GetAllAsync(CancellationToken cancellationToken=default);
 
         Task AddAsync(T entity);
 

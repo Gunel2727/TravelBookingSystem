@@ -9,7 +9,7 @@ namespace TBS.Domain.Interfaces
 {
     public interface IAirlineRepository : IGenericRepository<Airline>
     {
-        Task<bool> IsCodeUnique(string code,CancellationToken cancellationToken = default);
+        Task<bool> IsCodeUniqueAsync(string code,CancellationToken cancellationToken = default);
         Task<Airline?> GetWithFlightsAsync(Guid id, CancellationToken cancellationToken = default);
     }
 }

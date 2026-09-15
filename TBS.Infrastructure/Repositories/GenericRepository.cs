@@ -30,15 +30,15 @@ namespace TBS.Infrastructure.Repositories
             _dbSet.Remove(entity);
         }
 
-        public virtual async Task<IList<T>> GetAllAsync()
+        public virtual async Task<IList<T>> GetAllAsync(CancellationToken cancellationToken = default)
         {
-            return await _dbSet.AsNoTracking().ToListAsync();
+            return await _dbSet.AsNoTracking().ToListAsync(cancellationToken);
         }
         
 
-        public virtual async Task<T?> GetByIdAsync(Guid id)
+        public virtual async Task<T?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
-            return await _dbSet.FindAsync(id);
+            return await _dbSet.FindAsync(id, cancellationToken);
         }
 
         public virtual void Update(T entity)
