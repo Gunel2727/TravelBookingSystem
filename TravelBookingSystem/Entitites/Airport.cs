@@ -13,5 +13,9 @@ namespace TBS.Domain.Entitites
         public string Code { get; set; } = string.Empty;
         public Guid CityId { get; set; }
         public City City { get; set; } = null!;
+
+        public ICollection<Flight> DepartureFlights { get; set; } = new List<Flight>();
+        public ICollection<Flight> ArrivalFlights { get; set; } = new List<Flight>();
     }
+
 }

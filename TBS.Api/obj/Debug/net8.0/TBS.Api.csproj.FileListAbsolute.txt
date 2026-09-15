@@ -158,3 +158,4 @@ C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Microsoft.IdentityModel
 C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
 C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Projects\TravelBookingSystem\TBS.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

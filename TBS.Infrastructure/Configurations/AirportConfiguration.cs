@@ -33,6 +33,9 @@ namespace TBS.Infrastructure.Configurations
                 .HasForeignKey(x=> x.CityId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+
+          
+
             builder.HasData(
                 new Airport
                 {

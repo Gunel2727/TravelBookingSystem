@@ -10,7 +10,9 @@ namespace TBS.Domain.Entitites
     public class Airline: AuditableEntity
     {
         public string Name { get; set; } = string.Empty;
-       
+
+        public string Code { get; set; } = string.Empty;
+
         public ICollection<Flight> Flights { get; set; } = new List<Flight>();
     }
 }

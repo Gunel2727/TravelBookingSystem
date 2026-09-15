@@ -49,6 +49,16 @@ namespace TBS.Infrastructure.Configurations
                 .HasForeignKey(x => x.ArrivalAirportId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            builder.HasOne(x=> x.DepartureAirport)
+                .WithMany(a=>a.DepartureFlights)
+                .HasForeignKey(x => x.DepartureAirportId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasOne(x => x.ArrivalAirport)
+                .WithMany(a => a.ArrivalFlights)
+                .HasForeignKey(x => x.ArrivalAirportId)
+                .OnDelete(DeleteBehavior.Restrict);
+
             builder.HasIndex(x => x.FlightNumber)
             .IsUnique();
         }

@@ -28,6 +28,10 @@ namespace TBS.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
@@ -1181,13 +1185,13 @@ namespace TBS.Infrastructure.Migrations
                         .IsRequired();
 
                     b.HasOne("TBS.Domain.Entitites.Airport", "ArrivalAirport")
-                        .WithMany()
+                        .WithMany("ArrivalFlights")
                         .HasForeignKey("ArrivalAirportId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("TBS.Domain.Entitites.Airport", "DepartureAirport")
-                        .WithMany()
+                        .WithMany("DepartureFlights")
                         .HasForeignKey("DepartureAirportId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -1407,6 +1411,13 @@ namespace TBS.Infrastructure.Migrations
             modelBuilder.Entity("TBS.Domain.Entitites.Airline", b =>
                 {
                     b.Navigation("Flights");
+                });
+
+            modelBuilder.Entity("TBS.Domain.Entitites.Airport", b =>
+                {
+                    b.Navigation("ArrivalFlights");
+
+                    b.Navigation("DepartureFlights");
                 });
 
             modelBuilder.Entity("TBS.Domain.Entitites.Amenity", b =>

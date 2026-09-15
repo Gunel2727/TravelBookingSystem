@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TBS.Application.DTOs.Airline;
 using TBS.Application.DTOs.Airport;
 using TBS.Application.DTOs.City;
 using TBS.Application.DTOs.Country;
@@ -70,6 +71,16 @@ namespace TBS.Application.Profiles
 
             CreateMap<CreatePaymentDto, Payment>();
             CreateMap<UpdatePaymentDto, Payment>();
+
+            CreateMap<Airline, AirlineDto>();
+            CreateMap<CreateAirlineDto, Airline>();
+            CreateMap<UpdateAirlineDto, Airline>();
+
+            CreateMap<Airport, AirportDto>()
+                .ForMember(dest => dest.CityName, opt => opt.MapFrom(src => src.City.Name));
+            CreateMap<CreateAirportDto, Airport>();
+            CreateMap<UpdateAirportDto, Airport>();
+
 
         }
      }
