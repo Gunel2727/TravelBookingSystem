@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using TBS.Domain.Entitites;
@@ -14,6 +16,14 @@ namespace TBS.Infrastructure.Repositories
     {
         public AirportRepository(AppDbContext context) : base(context)
         {
+        }
+
+       public override async Task<IList<Airport>> GetAllAsync(CancellationToken cancellationToken = default)
+        {
+            return await _context.Airports
+                .Include(a => a.City)
+                .AsNoTracking()
+                .ToListAsync(cancellationToken);
         }
 
         public async  Task<Airport?> GetByIdWithCityAsync(Guid id, CancellationToken cancellationToken = default)

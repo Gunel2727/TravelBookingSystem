@@ -22,6 +22,8 @@ namespace TBS.Application
             services.AddScoped<IHotelBookingService, HotelBookingService>();
             services.AddScoped<IPaymentService, PaymentService>();
             services.AddScoped<IFlightBookingService, FlightBookingService>();
+            services.AddScoped<IAirlineService, AirlineService>();
+            services.AddScoped<IAirportService, AirportService>();
 
 
             return services;

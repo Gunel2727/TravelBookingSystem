@@ -12,5 +12,6 @@ namespace TBS.Domain.Interfaces
         Task<Airport?> GetByIdWithCityAsync(Guid id, CancellationToken cancellationToken = default);
         Task<bool> IsCodeUniqueAsync(string code,CancellationToken cancellationToken = default);
         Task<Airport?> GetWithFlightsAsync(Guid id, CancellationToken cancellationToken = default);
+        
     }
 }

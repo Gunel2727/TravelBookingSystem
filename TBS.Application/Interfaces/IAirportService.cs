@@ -14,5 +14,6 @@ namespace TBS.Application.Interfaces
         Task<AirportDto> CreateAsync(CreateAirportDto dto,CancellationToken cancellationToken = default);
         Task<AirportDto> UpdateAsync(Guid id, UpdateAirportDto dto, CancellationToken cancellationToken = default);
         Task DeleteAsync(Guid id, CancellationToken cancellationToken = default);
+        
     }
 }

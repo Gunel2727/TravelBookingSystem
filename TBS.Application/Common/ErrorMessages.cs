@@ -19,6 +19,8 @@ namespace TBS.Application.Common
         public const string CheckOutDateMustBeAfterCheckInDate = "Çıxış tarixi giriş tarixindən sonra olmalıdır";
         public const string PaymentNotFound = "Axtarılan ödəniş tapılmadı.";
         public const string FlightBookingNotFound = "Axtarılan uçuş rezervasiyası tapılmadı.";
+        public const string AirlineNotFound = "Axtarılan hava yolu şirkəti tapılmadı.";
+        
     }
 }
 
