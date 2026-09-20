@@ -24,7 +24,7 @@ namespace TBS.Api.Controllers
             return Ok(ResponseModel<IList<FlightBookingDto>>.Ok(bookings));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:guid}")]
         public async Task<IActionResult> GetBookingById(Guid id,CancellationToken cancellationToken=default)
         {
             var booking = await _flightBookingService.GetByIdAsync(id, cancellationToken);
@@ -38,14 +38,14 @@ namespace TBS.Api.Controllers
             return StatusCode(201, ResponseModel<FlightBookingDto>.Created(booking));
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:guid}")]
         public async Task<IActionResult> DeleteBooking(Guid id, CancellationToken cancellationToken = default)
         {
             await _flightBookingService.DeleteAsync(id, cancellationToken);
             return Ok(ResponseModel<bool>.Ok(true));
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{id:guid}")]
         public async Task<IActionResult> UpdateBooking(Guid id, [FromBody] UpdateFlightBookingDto dto,CancellationToken cancellationToken=default)
         {
             var booking=await _flightBookingService.UpdateAsync(id, dto, cancellationToken);

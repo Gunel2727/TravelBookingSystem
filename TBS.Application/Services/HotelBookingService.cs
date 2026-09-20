@@ -60,7 +60,7 @@ namespace TBS.Application.Services
             hotelBooking.HotelBookingRooms = bookingRooms;
 
             await _unitOfWork.HotelBookingRepository.AddAsync(hotelBooking);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
 
             
             var createdBooking = await _unitOfWork.HotelBookingRepository.GetByIdAsync(hotelBooking.Id);
@@ -80,25 +80,25 @@ namespace TBS.Application.Services
                 throw new BadRequestException("Giriş tarixi başlamış və ya keçmiş bronlar ləğv edilə bilməz.");
             hotelBooking.Status = BookingStatus.Cancelled;
             _unitOfWork.HotelBookingRepository.Update(hotelBooking);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
 
         public async Task<IList<HotelBookingDto>> GetAllAsync(CancellationToken cancellationToken = default)
         {
-            var hotelBookings=await _unitOfWork.HotelBookingRepository.GetAllAsync();
+            var hotelBookings=await _unitOfWork.HotelBookingRepository.GetAllAsync(cancellationToken);
             return _mapper.Map<IList<HotelBookingDto>>(hotelBookings);
         }
 
         public async Task<HotelBookingDto> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
-            var hotelBooking = await _unitOfWork.HotelBookingRepository.GetByIdAsync(id);
+            var hotelBooking = await _unitOfWork.HotelBookingRepository.GetByIdAsync(id,cancellationToken);
             if (hotelBooking == null) throw new NotFoundException(ErrorMessages.HotelBookingNotFound);
             return _mapper.Map<HotelBookingDto>(hotelBooking);
         }
 
         public async Task<bool> IsRoomAvailableAsync(Guid roomId, DateTime checkInDate, DateTime checkOutDate, CancellationToken cancellationToken = default)
         {
-            return await _unitOfWork.HotelBookingRepository.IsRoomAvailableAsync(roomId, checkInDate, checkOutDate);
+            return await _unitOfWork.HotelBookingRepository.IsRoomAvailableAsync(roomId, checkInDate, checkOutDate,cancellationToken);
         }
 
         public async Task<HotelBookingDto> UpdateAsync(Guid id, UpdateHotelBookingDto dto, CancellationToken cancellationToken = default)
@@ -107,7 +107,7 @@ namespace TBS.Application.Services
             if(hotelBooking == null) throw new NotFoundException(ErrorMessages.HotelBookingNotFound);
             _mapper.Map(dto, hotelBooking);
             _unitOfWork.HotelBookingRepository.Update(hotelBooking);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
             return _mapper.Map<HotelBookingDto>(hotelBooking);
         }
     }

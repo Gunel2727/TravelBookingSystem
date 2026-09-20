@@ -16,7 +16,7 @@ namespace TBS.Infrastructure.Repositories
         {
         }
 
-        public async Task<IList<Hotel>> GetFilteredAsync(string? search, Guid? cityId)
+        public async Task<IList<Hotel>> GetFilteredAsync(string? search, Guid? cityId,CancellationToken cancellationToken)
         {
             var query = _context.Hotels
                 .Include(h => h.City)
@@ -37,9 +37,9 @@ namespace TBS.Infrastructure.Repositories
                 query = query.Where(h => h.CityId == cityId.Value);
             }
 
-            return await query.ToListAsync();
+            return await query.ToListAsync(cancellationToken);
         }
-        public override async Task<Hotel?> GetByIdAsync(Guid id)
+        public override async Task<Hotel?> GetByIdAsync(Guid id,CancellationToken cancellationToken)
         {
             return await _context.Hotels
                 .Include(h => h.City)
@@ -47,15 +47,15 @@ namespace TBS.Infrastructure.Repositories
                 .Include(h => h.HotelImages)
                 .Include(h => h.HotelAmenities)
                 .Include(h => h.Reviews)
-                .FirstOrDefaultAsync(h => h.Id == id);
+                .FirstOrDefaultAsync(h => h.Id == id,cancellationToken);
         }
-        public override async Task<IList<Hotel>> GetAllAsync()
+        public override async Task<IList<Hotel>> GetAllAsync(CancellationToken cancellationToken)
         {
             return await _context.Hotels
                 .Include(h => h.City)
                 .Include(h => h.HotelImages)
                 .AsNoTracking()
-                .ToListAsync();
+                .ToListAsync(cancellationToken);
         }
     }
 }

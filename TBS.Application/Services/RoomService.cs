@@ -22,53 +22,53 @@ namespace TBS.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<RoomDto> AddAsync(CreateRoomDto dto)
+        public async Task<RoomDto> AddAsync(CreateRoomDto dto, CancellationToken cancellationToken = default)
         {
             var room = _mapper.Map<Room>(dto);
             await _unitOfWork.RoomRepository.AddAsync(room);
-            await _unitOfWork.SaveChangesAsync();
-            var createdRoom=await _unitOfWork.RoomRepository.GetByIdAsync(room.Id);
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
+            var createdRoom=await _unitOfWork.RoomRepository.GetByIdAsync(room.Id,cancellationToken);
             return _mapper.Map<RoomDto>(createdRoom?? room);
         }
 
-        public async Task DeleteAsync(Guid id)
+        public async Task DeleteAsync(Guid id, CancellationToken cancellationToken = default)
         {
-            var room = await _unitOfWork.RoomRepository.GetByIdAsync(id);
+            var room = await _unitOfWork.RoomRepository.GetByIdAsync(id,cancellationToken);
             if(room==null)
             {
                 throw new NotFoundException(ErrorMessages.RoomNotFound);
             }
             _unitOfWork.RoomRepository.Delete(room);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task<IList<RoomDto>> GetAllAsync()
+        public async Task<IList<RoomDto>> GetAllAsync(CancellationToken cancellationToken = default)
         {
-            var rooms=await _unitOfWork.RoomRepository.GetAllAsync();
+            var rooms=await _unitOfWork.RoomRepository.GetAllAsync(cancellationToken);
             return _mapper.Map<IList<RoomDto>>(rooms);
         }
 
-        public async Task<RoomDto> GetByIdAsync(Guid id)
+        public async Task<RoomDto> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
-            var room = await _unitOfWork.RoomRepository.GetByIdAsync(id);
+            var room = await _unitOfWork.RoomRepository.GetByIdAsync(id,cancellationToken);
             if (room == null) throw new NotFoundException(ErrorMessages.RoomNotFound);
             return _mapper.Map<RoomDto>(room);
         }
 
-        public async Task<IList<RoomDto>> GetFilteredAsync(FilterRoomDto dto)
+        public async Task<IList<RoomDto>> GetFilteredAsync(FilterRoomDto dto, CancellationToken cancellationToken = default)
         {
-            var rooms = await _unitOfWork.RoomRepository.GetFilteredAsync(dto.HotelId,dto.MinPriceForNight,dto.MaxPriceForNight,dto.MinCapacity);
+            var rooms = await _unitOfWork.RoomRepository.GetFilteredAsync(dto.HotelId,dto.MinPriceForNight,dto.MaxPriceForNight,dto.MinCapacity,cancellationToken);
             return _mapper.Map<IList<RoomDto>>(rooms);
         }
 
-        public async Task<RoomDto> UpdateAsync(Guid id,UpdateRoomDto dto)
+        public async Task<RoomDto> UpdateAsync(Guid id,UpdateRoomDto dto, CancellationToken cancellationToken = default)
         {
-            var room = await _unitOfWork.RoomRepository.GetByIdAsync(id);
+            var room = await _unitOfWork.RoomRepository.GetByIdAsync(id,cancellationToken);
             if(room==null) throw new NotFoundException(ErrorMessages.RoomNotFound);
             _mapper.Map(dto,room);
            
-            await _unitOfWork.SaveChangesAsync();
-            var updatedRoom = await _unitOfWork.RoomRepository.GetByIdAsync(id);
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
+            var updatedRoom = await _unitOfWork.RoomRepository.GetByIdAsync(id,cancellationToken);
             return _mapper.Map<RoomDto>(updatedRoom??room);
         }
     }

@@ -9,11 +9,11 @@ namespace TBS.Application.Interfaces
 {
     public interface IRoomService
     {
-        Task<RoomDto> GetByIdAsync(Guid id);
-        Task<IList<RoomDto>> GetAllAsync();
-        Task<RoomDto> AddAsync(CreateRoomDto dto);
-        Task<RoomDto> UpdateAsync(Guid id,UpdateRoomDto dto);
-        Task DeleteAsync(Guid id);
-        Task<IList<RoomDto>> GetFilteredAsync(FilterRoomDto dto);
+        Task<RoomDto> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
+        Task<IList<RoomDto>> GetAllAsync(CancellationToken cancellationToken = default);
+        Task<RoomDto> AddAsync(CreateRoomDto dto, CancellationToken cancellationToken = default);
+        Task<RoomDto> UpdateAsync(Guid id,UpdateRoomDto dto, CancellationToken cancellationToken = default);
+        Task DeleteAsync(Guid id, CancellationToken cancellationToken = default);
+        Task<IList<RoomDto>> GetFilteredAsync(FilterRoomDto dto, CancellationToken cancellationToken = default);
     }
 }

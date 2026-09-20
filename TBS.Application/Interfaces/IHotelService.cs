@@ -9,11 +9,11 @@ namespace TBS.Application.Interfaces
 {
     public interface IHotelService
     {
-        Task<HotelDto> GetByIdAsync(Guid id);
-        Task<IList<HotelDto>> GetAllAsync();
-        Task<HotelDto> AddAsync(CreateHotelDto dto);
-        Task<HotelDto> UpdateAsync(Guid id, UpdateHotelDto dto);
-        Task DeleteAsync(Guid id);
-        Task<IList<HotelDto>> GetFilteredAsync(FilterHotelDto dto);
+        Task<HotelDto> GetByIdAsync(Guid id,CancellationToken cancellationToken=default);
+        Task<IList<HotelDto>> GetAllAsync(CancellationToken cancellationToken=default);
+        Task<HotelDto> AddAsync(CreateHotelDto dto, CancellationToken cancellationToken = default);
+        Task<HotelDto> UpdateAsync(Guid id, UpdateHotelDto dto, CancellationToken cancellationToken = default);
+        Task DeleteAsync(Guid id, CancellationToken cancellationToken = default);
+        Task<IList<HotelDto>> GetFilteredAsync(FilterHotelDto dto, CancellationToken cancellationToken = default);
     }
 }

@@ -12,6 +12,6 @@ namespace TBS.Domain.Interfaces
         Task<IList<Flight>> GetFilteredAsync(
             Guid? departureAirportId,
             Guid? arrivalAirportId,
-            DateTime? departureDate);
+            DateTime? departureDate,CancellationToken cancellationToken=default);
     }
 }

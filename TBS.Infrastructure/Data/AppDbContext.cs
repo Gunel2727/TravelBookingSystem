@@ -1,14 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TBS.Domain.Entitites;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace TBS.Infrastructure.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
@@ -18,7 +20,6 @@ namespace TBS.Infrastructure.Data
         public DbSet<Airline> Airlines { get; set; }
         public DbSet<Airport> Airports { get; set; }
         public DbSet<Amenity> Amenities { get; set; }
-        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Flight> Flights { get; set; }

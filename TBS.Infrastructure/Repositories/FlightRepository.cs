@@ -16,7 +16,7 @@ namespace TBS.Infrastructure.Repositories
         {
         }
 
-        public async Task<IList<Flight>> GetFilteredAsync(Guid? departureAirportId, Guid? arrivalAirportId, DateTime? departureDate)
+        public async Task<IList<Flight>> GetFilteredAsync(Guid? departureAirportId, Guid? arrivalAirportId, DateTime? departureDate,CancellationToken cancellationToken)
         {
             var query = _context.Flights
                 .Include(f => f.ArrivalAirport)
@@ -46,26 +46,26 @@ namespace TBS.Infrastructure.Repositories
             }
 
 
-            return await query.ToListAsync();
+            return await query.ToListAsync(cancellationToken);
         }
 
-        public override async Task<Flight?> GetByIdAsync(Guid id)
+        public override async Task<Flight?> GetByIdAsync(Guid id,CancellationToken cancellationToken)
         {
             return await _context.Flights
-                .Include(f => f.ArrivalAirport)
-                .Include(f => f.DepartureAirport)
+                .Include(f => f.ArrivalAirport).ThenInclude(a => a.City)
+                .Include(f => f.DepartureAirport).ThenInclude(a => a.City)
                 .Include(f => f.Airline)
-                .FirstOrDefaultAsync(f => f.Id == id);
+                .FirstOrDefaultAsync(f => f.Id == id,cancellationToken);
         }
 
-        public override async Task<IList<Flight>> GetAllAsync()
+        public override async Task<IList<Flight>> GetAllAsync(CancellationToken cancellationToken)
         {
             return await _context.Flights
-                .Include(f => f.ArrivalAirport)
-                .Include(f => f.DepartureAirport)
+                .Include(f => f.ArrivalAirport).ThenInclude(a => a.City)
+                .Include(f => f.DepartureAirport).ThenInclude(a => a.City)
                 .Include(f => f.Airline)
                 .AsNoTracking()
-                .ToListAsync();
+                .ToListAsync(cancellationToken);
         }
 
     }

@@ -16,7 +16,7 @@ namespace TBS.Infrastructure.Repositories
         {
         }
 
-        public override async Task<FlightBooking> GetByIdAsync(Guid id)
+        public override async Task<FlightBooking> GetByIdAsync(Guid id,CancellationToken cancellationToken)
         {
             return await _context.FlightBookings
                 .Include(fb => fb.ApplicationUser)
@@ -24,17 +24,19 @@ namespace TBS.Infrastructure.Repositories
                 .Include(fb => fb.FlightBookingPassengers)
                     .ThenInclude(fbp => fbp.Passenger)
                 .Include(fb => fb.Payments)
-                .FirstOrDefaultAsync(fb => fb.Id == id);
+                .FirstOrDefaultAsync(fb => fb.Id == id,cancellationToken);
         }
 
-        public override async Task<IList<FlightBooking>> GetAllAsync()
+        public override async Task<IList<FlightBooking>> GetAllAsync(CancellationToken cancellationToken)
         {
             return await _context.FlightBookings
                 .AsNoTracking()
                 .Include(fb => fb.ApplicationUser)
+                .Include(fb => fb.Flight) 
                 .Include(fb => fb.FlightBookingPassengers)
+                    .ThenInclude(fbp => fbp.Passenger)
                 .Include(fb => fb.Payments)
-                .ToListAsync();
+                .ToListAsync(cancellationToken);
         }
     }
 }

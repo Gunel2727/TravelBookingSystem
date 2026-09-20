@@ -16,7 +16,7 @@ namespace TBS.Infrastructure.Repositories
         {
         }
 
-        public async Task<IList<Room>> GetFilteredAsync(Guid? hotelId, decimal? minPrice, decimal? maxPrice, int? capacity)
+        public async Task<IList<Room>> GetFilteredAsync(Guid? hotelId, decimal? minPrice, decimal? maxPrice, int? capacity,CancellationToken cancellationToken)
         {
             var query = _context.Rooms
                 .Include(r => r.Hotel)
@@ -40,21 +40,21 @@ namespace TBS.Infrastructure.Repositories
             {
                 query = query.Where(r => r.Capacity >= capacity.Value);
             }
-            return await query.ToListAsync();
+            return await query.ToListAsync(cancellationToken);
         }
-        public override async Task<Room?> GetByIdAsync(Guid id)
+        public override async Task<Room?> GetByIdAsync(Guid id,CancellationToken cancellationToken)
         {
             return await _context.Rooms
                 .Include(r => r.Hotel)
                 .Include(r => r.RoomImages)
-                .FirstOrDefaultAsync(r => r.Id == id);
+                .FirstOrDefaultAsync(r => r.Id == id,cancellationToken);
         }
-        public override async Task<IList<Room>> GetAllAsync()
+        public override async Task<IList<Room>> GetAllAsync(CancellationToken cancellationToken)
         {
             return await _context.Rooms
                 .Include(r => r.Hotel)
                 .Include(r => r.RoomImages)
-                .ToListAsync();
+                .ToListAsync(cancellationToken);
         }
     }
 }

@@ -16,21 +16,21 @@ namespace TBS.Infrastructure.Repositories
         {
         }
 
-        public override async Task<Payment?> GetByIdAsync(Guid id)
+        public override async Task<Payment?> GetByIdAsync(Guid id,CancellationToken cancellationToken)
         {
             return await _context.Payments
                 .Include(p => p.FlightBooking)
                 .Include(p => p.HotelBooking)
-                .FirstOrDefaultAsync(p => p.Id == id);
+                .FirstOrDefaultAsync(p => p.Id == id,cancellationToken);
         }
 
-        public override async Task<IList<Payment>> GetAllAsync()
+        public override async Task<IList<Payment>> GetAllAsync(CancellationToken cancellationToken)
         {
             return await _context.Payments
                 .AsNoTracking()
                 .Include(p => p.FlightBooking)
                 .Include(p => p.HotelBooking)
-                .ToListAsync();
+                .ToListAsync(cancellationToken);
         }
     }
 }

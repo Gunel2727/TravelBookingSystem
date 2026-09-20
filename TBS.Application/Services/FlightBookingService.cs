@@ -36,7 +36,7 @@ namespace TBS.Application.Services
             {
                 throw new BadRequestException("Sərnişinlər təkrarlana bilməz.");
             }
-            var flight=await _unitOfWork.FlightRepository.GetByIdAsync(dto.FlightId);
+            var flight=await _unitOfWork.FlightRepository.GetByIdAsync(dto.FlightId,cancellationToken);
             if (flight == null)
             {
                 throw new NotFoundException("Uçuş tapılmadı.");
@@ -72,7 +72,7 @@ namespace TBS.Application.Services
 
         public async Task DeleteAsync(Guid id, CancellationToken cancellationToken = default)
         {
-            var flightBooking = await _unitOfWork.FlightBookingRepository.GetByIdAsync(id);
+            var flightBooking = await _unitOfWork.FlightBookingRepository.GetByIdAsync(id,cancellationToken);
             if(flightBooking == null)
             {
                 throw new NotFoundException(ErrorMessages.FlightBookingNotFound);
@@ -89,13 +89,13 @@ namespace TBS.Application.Services
 
         public async Task<IList<FlightBookingDto>> GetAllAsync(CancellationToken cancellationToken = default)
         {
-            var flightBooking=await _unitOfWork.FlightBookingRepository.GetAllAsync();
+            var flightBooking=await _unitOfWork.FlightBookingRepository.GetAllAsync(cancellationToken);
             return _mapper.Map<IList<FlightBookingDto>>(flightBooking);
         }
 
         public async Task<FlightBookingDto> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
-            var flightBooking=await _unitOfWork.FlightBookingRepository.GetByIdAsync(id);
+            var flightBooking=await _unitOfWork.FlightBookingRepository.GetByIdAsync(id,cancellationToken);
             if (flightBooking==null)
             {
                 throw new NotFoundException(ErrorMessages.FlightBookingNotFound);
@@ -105,7 +105,7 @@ namespace TBS.Application.Services
 
         public async Task<FlightBookingDto> UpdateAsync(Guid id, UpdateFlightBookingDto dto, CancellationToken cancellationToken = default)
         {
-            var flightBooking = await _unitOfWork.FlightBookingRepository.GetByIdAsync(id);
+            var flightBooking = await _unitOfWork.FlightBookingRepository.GetByIdAsync(id,cancellationToken);
             if (flightBooking==null)
             {
                 throw new NotFoundException(ErrorMessages.FlightBookingNotFound);

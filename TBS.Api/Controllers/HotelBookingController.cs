@@ -45,7 +45,7 @@ namespace TBS.Api.Controllers
             return Ok(ResponseModel<bool>.Ok(true));
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{id:guid}")]
         public async Task<IActionResult> UpdateBooking(Guid id, [FromBody] UpdateHotelBookingDto dto, CancellationToken cancellationToken)
         {
             var booking = await _hotelBookingService.UpdateAsync(id, dto, cancellationToken);

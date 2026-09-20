@@ -18,45 +18,45 @@ namespace TBS.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllRooms()
+        public async Task<IActionResult> GetAllRooms(CancellationToken cancellationToken = default)
         {
-            var rooms=await _roomService.GetAllAsync();
+            var rooms=await _roomService.GetAllAsync(cancellationToken);
             return Ok (ResponseModel<IList<RoomDto>>.Ok(rooms));
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetRoomById(Guid id)
+        [HttpGet("{id:guid}")]
+        public async Task<IActionResult> GetRoomById(Guid id, CancellationToken cancellationToken = default)
         {
-            var room=await _roomService.GetByIdAsync(id);
+            var room=await _roomService.GetByIdAsync(id,cancellationToken);
             return Ok(ResponseModel<RoomDto>.Ok(room));
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateRoom([FromBody] CreateRoomDto dto)
+        public async Task<IActionResult> CreateRoom([FromBody] CreateRoomDto dto, CancellationToken cancellationToken = default)
         {
-            var room=await _roomService.AddAsync(dto);
+            var room=await _roomService.AddAsync(dto,cancellationToken);
             return StatusCode(201, ResponseModel<RoomDto>.Created(room));
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteRoom(Guid id) 
+        [HttpDelete("{id:guid}")]
+        public async Task<IActionResult> DeleteRoom(Guid id, CancellationToken cancellationToken = default) 
         { 
-            await _roomService.DeleteAsync(id);
+            await _roomService.DeleteAsync(id,cancellationToken);
             return Ok(ResponseModel<bool>.Ok(true));
 
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateRoom(Guid id, [FromBody] UpdateRoomDto dto)
+        [HttpPut("{id:guid}")]
+        public async Task<IActionResult> UpdateRoom(Guid id, [FromBody] UpdateRoomDto dto, CancellationToken cancellationToken = default)
         {
-            var room=await _roomService.UpdateAsync(id, dto);
+            var room=await _roomService.UpdateAsync(id, dto,cancellationToken);
             return Ok(ResponseModel<RoomDto>.Ok(room));
         }
 
         [HttpGet("filter")]
-        public async Task<IActionResult> FilterRoom([FromQuery] FilterRoomDto dto)
+        public async Task<IActionResult> FilterRoom([FromQuery] FilterRoomDto dto, CancellationToken cancellationToken = default)
         {
-            var rooms=await _roomService.GetFilteredAsync(dto);
+            var rooms=await _roomService.GetFilteredAsync(dto,cancellationToken);
             return Ok(ResponseModel<IList<RoomDto>>.Ok(rooms));
         }
     }

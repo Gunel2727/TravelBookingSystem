@@ -9,11 +9,11 @@ namespace TBS.Application.Interfaces
 {
     public interface IFlightService
     {
-        Task<FlightDto> GetByIdAsync(Guid id);
-        Task<IList<FlightDto>> GetAllAsync();
-        Task<FlightDto> AddAsync(CreateFlightDto dto);
-        Task<FlightDto> UpdateAsync(Guid id, UpdateFlightDto dto);
-        Task DeleteAsync(Guid id);
-        Task<IList<FlightDto>> GetFilteredAsync(FilterFlightDto dto);
+        Task<FlightDto> GetByIdAsync(Guid id,CancellationToken cancellationToken=default);
+        Task<IList<FlightDto>> GetAllAsync(CancellationToken cancellationToken=default);
+        Task<FlightDto> AddAsync(CreateFlightDto dto,CancellationToken cancellationToken=default);
+        Task<FlightDto> UpdateAsync(Guid id, UpdateFlightDto dto,CancellationToken cancellationToken=default);
+        Task DeleteAsync(Guid id,CancellationToken cancellationToken=default);
+        Task<IList<FlightDto>> GetFilteredAsync(FilterFlightDto dto,CancellationToken cancellationToken=default);
     }
 }

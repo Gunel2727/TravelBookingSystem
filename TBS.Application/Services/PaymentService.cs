@@ -43,28 +43,28 @@ namespace TBS.Application.Services
             payment.Status = PaymentStatus.Paid;
             await _unitOfWork.PaymentRepository.AddAsync(payment);
              _unitOfWork.HotelBookingRepository.Update(hotelBooking);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
             return _mapper.Map<PaymentDto>(payment);
         }
 
         public async Task DeleteAsync(Guid id, CancellationToken cancellationToken = default)
         {
-            var payment = await _unitOfWork.PaymentRepository.GetByIdAsync(id);
+            var payment = await _unitOfWork.PaymentRepository.GetByIdAsync(id,cancellationToken);
             if(payment == null)
                 throw new NotFoundException(ErrorMessages.PaymentNotFound);
             _unitOfWork.PaymentRepository.Delete(payment);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
 
         public async Task<IList<PaymentDto>> GetAllAsync(CancellationToken cancellationToken = default)
         {
-            var payments= await _unitOfWork.PaymentRepository.GetAllAsync();
+            var payments= await _unitOfWork.PaymentRepository.GetAllAsync(cancellationToken);
             return _mapper.Map<IList<PaymentDto>>(payments);
         }
 
         public async Task<PaymentDto> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
-            var payment =await _unitOfWork.PaymentRepository.GetByIdAsync(id);
+            var payment =await _unitOfWork.PaymentRepository.GetByIdAsync(id,cancellationToken);
             if (payment == null)
                 throw new NotFoundException(ErrorMessages.PaymentNotFound);
             return _mapper.Map<PaymentDto>(payment);
@@ -72,11 +72,11 @@ namespace TBS.Application.Services
 
         public async Task<PaymentDto> UpdateAsync(Guid id, UpdatePaymentDto dto, CancellationToken cancellationToken = default)
         {
-            var payment=await _unitOfWork.PaymentRepository.GetByIdAsync(id);
+            var payment=await _unitOfWork.PaymentRepository.GetByIdAsync(id,cancellationToken);
             if (payment == null)
                 throw new NotFoundException(ErrorMessages.PaymentNotFound);
             _mapper.Map(dto, payment);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
            
             return _mapper.Map<PaymentDto>(payment);
 
