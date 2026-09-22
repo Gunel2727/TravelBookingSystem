@@ -81,6 +81,8 @@ namespace TBS.Application.Profiles
             CreateMap<CreateAirportDto, Airport>();
             CreateMap<UpdateAirportDto, Airport>();
 
+           
+
 
         }
      }
