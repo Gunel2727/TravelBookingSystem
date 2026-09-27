@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TBS.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c50d1e26d349e253c4a14ce94ea9d92ab850a93f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34defefc1774d95dd1d90abb115813085f7ec6ed")]
 [assembly: System.Reflection.AssemblyProductAttribute("TBS.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TBS.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

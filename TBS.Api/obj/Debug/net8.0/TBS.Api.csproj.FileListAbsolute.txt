@@ -159,3 +159,12 @@ C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Microsoft.IdentityModel
 C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
 C:\Projects\TravelBookingSystem\TBS.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\FluentValidation.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Microsoft.Bcl.Cryptography.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\System.Formats.Asn1.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

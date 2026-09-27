@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TBS.Application.DTOs.Airline;
 using TBS.Application.DTOs.Airport;
+using TBS.Application.DTOs.Auth;
 using TBS.Application.DTOs.City;
 using TBS.Application.DTOs.Country;
 using TBS.Application.DTOs.Flight;
@@ -81,7 +82,7 @@ namespace TBS.Application.Profiles
             CreateMap<CreateAirportDto, Airport>();
             CreateMap<UpdateAirportDto, Airport>();
 
-           
+            CreateMap<RegisterDto, ApplicationUser>();
 
 
         }
