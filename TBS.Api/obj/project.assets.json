@@ -111,6 +111,39 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Http.Abstractions/2.3.13": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.3.12",
+          "System.Text.Encodings.Web": "8.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Http.Features/2.3.12": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "8.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -1232,7 +1265,7 @@
       "System.Text.Encodings.Web/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net8.0/_._": {
+          "lib/net8.0/System.Text.Encodings.Web.dll": {
             "related": ".xml"
           }
         },
@@ -1292,6 +1325,7 @@
         "dependencies": {
           "AutoMapper": "16.2.0",
           "FluentValidation.DependencyInjectionExtensions": "12.1.1",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.3.13",
           "Microsoft.Extensions.Configuration": "8.0.0",
           "Microsoft.IdentityModel.Tokens": "8.23.0",
           "System.IdentityModel.Tokens.Jwt": "8.23.0",
@@ -1302,7 +1336,10 @@
         },
         "runtime": {
           "bin/placeholder/TBS.Application.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "TBS.Domain/1.0.0": {
         "type": "project",
@@ -1326,6 +1363,7 @@
           "Microsoft.EntityFrameworkCore": "8.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.23.0",
+          "TBS.Application": "1.0.0",
           "TBS.Domain": "1.0.0"
         },
         "compile": {
@@ -1464,6 +1502,32 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.xml",
         "microsoft.aspnetcore.cryptography.keyderivation.8.0.0.nupkg.sha512",
         "microsoft.aspnetcore.cryptography.keyderivation.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Abstractions/2.3.13": {
+      "sha512": "V40/i3RzwjOpC7aUXkWYac45lD5o/HH/BF6KDgWpto/YWGHW9oHd4OSYg+WkaZxZYXxF4t2fRUWA4KyyABxw8g==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.abstractions/2.3.13",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.xml",
+        "microsoft.aspnetcore.http.abstractions.2.3.13.nupkg.sha512",
+        "microsoft.aspnetcore.http.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Features/2.3.12": {
+      "sha512": "Lq3xByu3oBaIPJrKhL8NIRTwQO177NhztvBG6FBoajnxeDIZn2N5vzfDjcp7eQcyPbWPm9G1yMEi9ah+yMR7kw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.features/2.3.12",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.xml",
+        "microsoft.aspnetcore.http.features.2.3.12.nupkg.sha512",
+        "microsoft.aspnetcore.http.features.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore/8.0.0": {

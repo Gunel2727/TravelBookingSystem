@@ -26,11 +26,11 @@ namespace TBS.Application.DTOs.FlightBooking
     {
         public Guid FlightId { get; set; }
         public List<Guid> PassengerIds { get; set; } = new List<Guid>();
-        public Guid ApplicationUserId { get; set; }
+       
     }
     public class UpdateFlightBookingDto 
     {
         public List<Guid> PassengerIds { get; set; } = new List<Guid>();
-        public Guid ApplicationUserId { get; set; }
+        
     }
 }

@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TBS.Application.Interfaces;
+using TBS.Application.Services;
 using TBS.Domain.Entitites;
 using TBS.Domain.Interfaces;
 using TBS.Infrastructure.Data;
@@ -72,6 +74,10 @@ namespace TBS.Infrastructure
             services.AddScoped<IFlightBookingRepository, FlightBookingRepository>();
             services.AddScoped<IAirlineRepository, AirlineRepository>();
             services.AddScoped<IAirportRepository, AirportRepository>();
+
+            services.AddHttpContextAccessor();
+            services.AddScoped<ICurrentUserService, CurrentUserService>();
+
 
             return services;
         }

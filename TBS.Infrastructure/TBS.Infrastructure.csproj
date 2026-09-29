@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TBS.Application\TBS.Application.csproj" />
     <ProjectReference Include="..\TravelBookingSystem\TBS.Domain.csproj" />
   </ItemGroup>
 

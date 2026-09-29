@@ -31,9 +31,6 @@ namespace TBS.Application.DTOs.HotelBooking
        public List<Guid> RoomIds { get; set; } = new List<Guid>();
         public DateTime CheckInDate { get; set; }
         public DateTime CheckOutDate { get; set; }
-      
-        public Guid ApplicationUserId { get; set; }
-
     }
     public class UpdateHotelBookingDto
     {
@@ -42,8 +39,6 @@ namespace TBS.Application.DTOs.HotelBooking
         public List<Guid> RoomIds { get; set; } = new List<Guid>();
         public DateTime CheckInDate { get; set; }
         public DateTime CheckOutDate { get; set; }
-
-        public Guid ApplicationUserId { get; set; }
 
     }
 }

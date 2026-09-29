@@ -8,6 +8,7 @@ using TBS.Application.Interfaces;
 using TBS.Application.Profiles;
 using TBS.Application.Services;
 
+
 namespace TBS.Application
 {
     public static class DependencyInjection
@@ -25,6 +26,8 @@ namespace TBS.Application
             services.AddScoped<IAirlineService, AirlineService>();
             services.AddScoped<IAirportService, AirportService>();
             services.AddScoped<IAuthService, AuthService>();
+           
+           
 
 
             return services;

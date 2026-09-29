@@ -157,6 +157,10 @@
               "target": "Package",
               "version": "[12.1.1, )"
             },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.3.13, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -182,6 +186,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -219,6 +226,9 @@
             "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
+              "C:\\Projects\\TravelBookingSystem\\TBS.Application\\TBS.Application.csproj": {
+                "projectPath": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\TBS.Application.csproj"
+              },
               "C:\\Projects\\TravelBookingSystem\\TravelBookingSystem\\TBS.Domain.csproj": {
                 "projectPath": "C:\\Projects\\TravelBookingSystem\\TravelBookingSystem\\TBS.Domain.csproj"
               }

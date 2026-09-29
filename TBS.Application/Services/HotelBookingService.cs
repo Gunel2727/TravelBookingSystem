@@ -17,23 +17,34 @@ namespace TBS.Application.Services
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-
-        public HotelBookingService(IUnitOfWork unitOfWork, IMapper mapper)
+        private readonly ICurrentUserService _currentUserService;
+        public HotelBookingService(IUnitOfWork unitOfWork, IMapper mapper,ICurrentUserService currentUserService)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _currentUserService = currentUserService;
         }
         public async Task<HotelBookingDto> AddAsync(CreateHotelBookingDto dto, CancellationToken cancellationToken = default)
         {
             if(dto.CheckInDate< DateTime.UtcNow) throw new BadRequestException(ErrorMessages.CheckInDateCannotBeInThePast);
             if(dto.CheckOutDate <= dto.CheckInDate) throw new BadRequestException(ErrorMessages.CheckOutDateMustBeAfterCheckInDate);
-            int totalNights = (dto.CheckOutDate - dto.CheckInDate).Days;
+
+            if(dto.RoomIds==null || !dto.RoomIds.Any())
+            {
+                throw new BadRequestException("Ən azı bir otaq seçilməlidir.");
+            }
+            if(dto.RoomIds.Count()!=dto.RoomIds.Distinct().Count())
+            {
+                throw new BadRequestException("Eyni otaq bir neçə dəfə seçilə bilməz.");
+            }
+            
+            int totalNights = (dto.CheckOutDate.Date - dto.CheckInDate.Date).Days;
 
             var bookingRooms = new List<HotelBookingRoom>();
             decimal totalNightlyPrice = 0;
             foreach(var roomId in dto.RoomIds)
             {
-                bool isAvailable=await _unitOfWork.HotelBookingRepository.IsRoomAvailableAsync(roomId, dto.CheckInDate, dto.CheckOutDate);
+                bool isAvailable=await _unitOfWork.HotelBookingRepository.IsRoomAvailableAsync(roomId, dto.CheckInDate, dto.CheckOutDate,cancellationToken);
                 if(!isAvailable) {
                     throw new BadRequestException($"ID-si {roomId} olan otaq seçilmiş tarixlərdə məşğuldur.");
                 }
@@ -54,6 +65,7 @@ namespace TBS.Application.Services
             decimal totalPrice = totalNightlyPrice * totalNights;
 
             var hotelBooking = _mapper.Map<HotelBooking>(dto);
+            hotelBooking.ApplicationUserId = _currentUserService.UserId;
             hotelBooking.Status = BookingStatus.Pending;
             hotelBooking.ConfirmationNumber = $"HB-{Guid.NewGuid().ToString("N")[..8].ToUpper()}";
             hotelBooking.TotalPrice = totalPrice;
@@ -63,13 +75,13 @@ namespace TBS.Application.Services
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
             
-            var createdBooking = await _unitOfWork.HotelBookingRepository.GetByIdAsync(hotelBooking.Id);
+            var createdBooking = await _unitOfWork.HotelBookingRepository.GetByIdAsync(hotelBooking.Id,cancellationToken);
             return _mapper.Map<HotelBookingDto>(createdBooking ?? hotelBooking);
         }
 
         public async Task CancelBookingAsync(Guid id, CancellationToken cancellationToken = default)
         {
-            var hotelBooking = await _unitOfWork.HotelBookingRepository.GetByIdAsync(id);
+            var hotelBooking = await _unitOfWork.HotelBookingRepository.GetByIdAsync(id,cancellationToken);
             if (hotelBooking == null) throw new NotFoundException(ErrorMessages.HotelBookingNotFound);
 
             if(hotelBooking.Status == BookingStatus.Cancelled)
@@ -105,6 +117,12 @@ namespace TBS.Application.Services
         {
             var hotelBooking = await _unitOfWork.HotelBookingRepository.GetByIdAsync(id);
             if(hotelBooking == null) throw new NotFoundException(ErrorMessages.HotelBookingNotFound);
+
+            if(hotelBooking.ApplicationUserId!=_currentUserService.UserId)
+            {
+                throw new ForbiddenException("Siz yalnız özünüzə aid rezervasiyaları yeniləyə bilərsiniz.");
+            }
+        
             _mapper.Map(dto, hotelBooking);
             _unitOfWork.HotelBookingRepository.Update(hotelBooking);
             await _unitOfWork.SaveChangesAsync(cancellationToken);

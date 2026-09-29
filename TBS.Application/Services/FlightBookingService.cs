@@ -17,11 +17,13 @@ namespace TBS.Application.Services
     public class FlightBookingService : IFlightBookingService
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly ICurrentUserService _currentUserService;
         private readonly IMapper _mapper;
 
-        public FlightBookingService(IUnitOfWork unitOfWork, IMapper mapper)
+        public FlightBookingService(IUnitOfWork unitOfWork,ICurrentUserService currentUserService, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _currentUserService = currentUserService;
             _mapper = mapper;
         }
 
@@ -47,6 +49,8 @@ namespace TBS.Application.Services
 
             }
             var flightBooking = _mapper.Map<FlightBooking>(dto);
+
+            flightBooking.ApplicationUserId = _currentUserService.UserId;
 
             flightBooking.ConfirmationNumber = $"FB-{Guid.NewGuid().ToString("N")[..8].ToUpper()}";
             flightBooking.FlightBookingNumber = $"FBN-{Guid.NewGuid().ToString("N")[..6].ToUpper()}";
@@ -110,7 +114,11 @@ namespace TBS.Application.Services
             {
                 throw new NotFoundException(ErrorMessages.FlightBookingNotFound);
             }
-
+            if(flightBooking.ApplicationUserId!=_currentUserService.UserId)
+            {
+                throw new ForbiddenException("Siz yalnız özünüzə aid rezervasiyaları yeniləyə bilərsiniz.");
+            }
+        
            
             _mapper.Map(dto, flightBooking);
             _unitOfWork.FlightBookingRepository.Update(flightBooking);
