@@ -1,13 +1,15 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FluentValidation;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using TBS.Application.Interfaces;
 using TBS.Application.Profiles;
 using TBS.Application.Services;
-
+using TBS.Application.Validators;
 
 namespace TBS.Application
 {
@@ -26,7 +28,10 @@ namespace TBS.Application
             services.AddScoped<IAirlineService, AirlineService>();
             services.AddScoped<IAirportService, AirportService>();
             services.AddScoped<IAuthService, AuthService>();
-           
+
+
+            
+            services.AddValidatorsFromAssemblyContaining<RegisterValidator>();
            
 
 

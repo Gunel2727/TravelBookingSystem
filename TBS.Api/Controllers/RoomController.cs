@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TBS.Application.Common;
 using TBS.Application.DTOs.Room;
@@ -32,6 +33,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateRoom([FromBody] CreateRoomDto dto, CancellationToken cancellationToken = default)
         {
             var room=await _roomService.AddAsync(dto,cancellationToken);
@@ -39,6 +41,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpDelete("{id:guid}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteRoom(Guid id, CancellationToken cancellationToken = default) 
         { 
             await _roomService.DeleteAsync(id,cancellationToken);
@@ -47,6 +50,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpPut("{id:guid}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateRoom(Guid id, [FromBody] UpdateRoomDto dto, CancellationToken cancellationToken = default)
         {
             var room=await _roomService.UpdateAsync(id, dto,cancellationToken);

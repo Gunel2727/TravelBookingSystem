@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TBS.Application.Common;
 using TBS.Application.DTOs.Payment;
@@ -25,6 +26,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpGet("{id:guid}")]
+        [Authorize]
         public async Task<IActionResult> GetPaymentById(Guid id, CancellationToken cancellationToken)
         {
             var payment = await _paymentService.GetByIdAsync(id,cancellationToken);
@@ -32,6 +34,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> CreatePayment([FromBody] CreatePaymentDto dto, CancellationToken cancellationToken)
         {
             var payment = await _paymentService.AddAsync(dto, cancellationToken);

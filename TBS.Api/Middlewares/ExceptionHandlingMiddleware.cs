@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 using TBS.Application.Common;
-
+using System.Linq;
 namespace TBS.Api.Middlewares
 {
     public class ExceptionHandlingMiddleware
@@ -49,6 +49,11 @@ namespace TBS.Api.Middlewares
                 _logger.LogWarning(ex.Message);
                 await WriteResponseAsync(context, 403, ex.Message);
             }
+            catch (ValidationException ex)
+            {
+                _logger.LogWarning(ex.Message);
+                await WriteResponseAsync(context, 400, ex.Errors);
+            }
             catch (Exception ex)
             {
 
@@ -56,7 +61,7 @@ namespace TBS.Api.Middlewares
                 await WriteResponseAsync(context, 500, "Server xətası baş verdi");
             }
 
-            
+
 
         }
         private static async Task WriteResponseAsync(
@@ -75,6 +80,20 @@ namespace TBS.Api.Middlewares
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
 
+            await context.Response.WriteAsync(json);
+        }
+        private static async Task WriteResponseAsync(
+                HttpContext context,
+                 int statusCode,
+                 IDictionary<string, string[]> errors)
+        {
+            context.Response.ContentType = "application/json";
+            context.Response.StatusCode = statusCode;
+            var response = ResponseModel<object>.Fail(statusCode, errors.SelectMany(e => e.Value).ToList());
+            var json = JsonSerializer.Serialize(response, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
             await context.Response.WriteAsync(json);
         }
     }

@@ -9,5 +9,6 @@ namespace TBS.Domain.Interfaces
 {
     public interface IFlightBookingRepository:IGenericRepository<FlightBooking>
     {
+        Task<IList<FlightBooking>> GetBookingsByUserIdAsync(Guid userId, CancellationToken cancellationToken = default);
     }
 }

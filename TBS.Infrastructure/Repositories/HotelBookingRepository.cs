@@ -48,5 +48,18 @@ namespace TBS.Infrastructure.Repositories
                 .Include(b => b.ApplicationUser)
                 .ToListAsync(cancellationToken);
         }
+
+        public async Task<IList<HotelBooking>> GetBookingsByUserIdAsync(Guid userId, CancellationToken cancellationToken = default)
+        {
+            return await _context.HotelBookings
+                .AsNoTracking()
+                .Include(b => b.HotelBookingRooms)
+                .ThenInclude(br => br.Room)
+                .ThenInclude(r => r.Hotel)
+                .Include(b => b.ApplicationUser)
+                .Include(b => b.Payments)
+                .Where(b => b.ApplicationUserId == userId)
+                .ToListAsync(cancellationToken);
+        }
     }
 }

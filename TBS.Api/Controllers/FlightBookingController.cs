@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TBS.Application.Common;
 using TBS.Application.DTOs.FlightBooking;
@@ -18,6 +19,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllBookings(CancellationToken cancellationToken = default)
         {
             var bookings = await _flightBookingService.GetAllAsync(cancellationToken);
@@ -25,6 +27,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpGet("{id:guid}")]
+        [Authorize]
         public async Task<IActionResult> GetBookingById(Guid id,CancellationToken cancellationToken=default)
         {
             var booking = await _flightBookingService.GetByIdAsync(id, cancellationToken);
@@ -32,6 +35,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> CreateBooking([FromBody] CreateFlightBookingDto dto, CancellationToken cancellationToken = default)
         {
             var booking = await _flightBookingService.AddAsync(dto, cancellationToken);
@@ -39,6 +43,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpDelete("{id:guid}")]
+        [Authorize]
         public async Task<IActionResult> DeleteBooking(Guid id, CancellationToken cancellationToken = default)
         {
             await _flightBookingService.DeleteAsync(id, cancellationToken);
@@ -46,10 +51,19 @@ namespace TBS.Api.Controllers
         }
 
         [HttpPut("{id:guid}")]
+        [Authorize]
         public async Task<IActionResult> UpdateBooking(Guid id, [FromBody] UpdateFlightBookingDto dto,CancellationToken cancellationToken=default)
         {
             var booking=await _flightBookingService.UpdateAsync(id, dto, cancellationToken);
             return Ok(ResponseModel<FlightBookingDto>.Ok(booking));
+        }
+
+        [HttpGet("my-bookings")]
+        [Authorize]
+        public async Task<IActionResult> GetMyBookings(CancellationToken cancellationToken = default)
+        {
+            var bookings = await _flightBookingService.GetBookingsByUserIdAsync(cancellationToken);
+            return Ok(ResponseModel<IList<FlightBookingDto>>.Ok(bookings));
         }
     }
 }

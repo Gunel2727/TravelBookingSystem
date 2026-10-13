@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TBS.Application.Common;
 using TBS.Application.DTOs.Hotel;
@@ -32,6 +33,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateHotel([FromBody] CreateHotelDto dto, CancellationToken cancellationToken = default)
         {
             var hotel = await _hotelService.AddAsync(dto,cancellationToken);
@@ -39,6 +41,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpPut("{id:guid}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateHotel(Guid id, [FromBody] UpdateHotelDto dto, CancellationToken cancellationToken = default)
         {
             var hotel = await _hotelService.UpdateAsync(id, dto,cancellationToken);
@@ -46,6 +49,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpDelete("{id:guid}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteHotel(Guid id, CancellationToken cancellationToken = default)
         {
             await _hotelService.DeleteAsync(id,cancellationToken);

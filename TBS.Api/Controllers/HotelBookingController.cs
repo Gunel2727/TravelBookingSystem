@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TBS.Application.Common;
 using TBS.Application.DTOs.HotelBooking;
@@ -18,6 +19,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllBookings(CancellationToken cancellationToken)
         {
             var bookings= await _hotelBookingService.GetAllAsync(cancellationToken);
@@ -25,6 +27,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<IActionResult> GetBookingById(Guid id, CancellationToken cancellationToken)
         {
             var booking = await _hotelBookingService.GetByIdAsync(id,cancellationToken);
@@ -32,6 +35,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> CreateBooking([FromBody] CreateHotelBookingDto dto, CancellationToken cancellationToken)
         {
             var booking = await _hotelBookingService.AddAsync(dto, cancellationToken);
@@ -39,6 +43,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpPatch("{id:guid}/cancel")]
+        [Authorize] 
         public async Task<IActionResult> CancelBooking(Guid id, CancellationToken cancellationToken)
         {
             await _hotelBookingService.CancelBookingAsync(id, cancellationToken);
@@ -46,6 +51,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpPut("{id:guid}")]
+        [Authorize]
         public async Task<IActionResult> UpdateBooking(Guid id, [FromBody] UpdateHotelBookingDto dto, CancellationToken cancellationToken)
         {
             var booking = await _hotelBookingService.UpdateAsync(id, dto, cancellationToken);
@@ -59,5 +65,12 @@ namespace TBS.Api.Controllers
             return Ok(ResponseModel<bool>.Ok(isAvailable));
         }
 
+        [HttpGet("my-bookings")]
+        [Authorize]
+        public async Task<IActionResult> GetMyBookings(CancellationToken cancellationToken)
+        {
+            var bookings = await _hotelBookingService.GetBookingsByUserIdAsync(cancellationToken);
+            return Ok(ResponseModel<IList<HotelBookingDto>>.Ok(bookings));
+        }
     }
 }

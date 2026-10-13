@@ -38,6 +38,6 @@ namespace TBS.Application.Validators
                 .IsEnumName(typeof(RoomType), caseSensitive: false)
                 .WithMessage("Düzgün otaq tipi daxil edilməlidir (məs: Standard, Deluxe, Suite).");
         }
-    }
+    
     }
 }

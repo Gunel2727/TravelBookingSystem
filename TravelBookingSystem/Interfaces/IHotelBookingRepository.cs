@@ -10,5 +10,6 @@ namespace TBS.Domain.Interfaces
     public interface IHotelBookingRepository:IGenericRepository<HotelBooking>
     {
         Task<bool> IsRoomAvailableAsync(Guid roomId, DateTime checkInDate, DateTime checkOutDate, CancellationToken cancellationToken = default);
+        Task<IList<HotelBooking>> GetBookingsByUserIdAsync(Guid userId, CancellationToken cancellationToken = default);
     }
 }

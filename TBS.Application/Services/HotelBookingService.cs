@@ -101,6 +101,14 @@ namespace TBS.Application.Services
             return _mapper.Map<IList<HotelBookingDto>>(hotelBookings);
         }
 
+        public async Task<IList<HotelBookingDto>> GetBookingsByUserIdAsync(CancellationToken cancellationToken = default)
+        {
+            var userId = _currentUserService.UserId;
+            if(userId == Guid.Empty) throw new UnauthorizedException("Sistemə daxil olmalısınız.");
+            var hotelBookings = await _unitOfWork.HotelBookingRepository.GetBookingsByUserIdAsync(userId, cancellationToken);
+            return _mapper.Map<IList<HotelBookingDto>>(hotelBookings);
+        }
+
         public async Task<HotelBookingDto> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
             var hotelBooking = await _unitOfWork.HotelBookingRepository.GetByIdAsync(id,cancellationToken);

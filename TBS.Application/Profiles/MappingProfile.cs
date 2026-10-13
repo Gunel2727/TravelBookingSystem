@@ -10,6 +10,7 @@ using TBS.Application.DTOs.Auth;
 using TBS.Application.DTOs.City;
 using TBS.Application.DTOs.Country;
 using TBS.Application.DTOs.Flight;
+using TBS.Application.DTOs.FlightBooking;
 using TBS.Application.DTOs.Hotel;
 using TBS.Application.DTOs.HotelBooking;
 using TBS.Application.DTOs.Payment;
@@ -26,8 +27,7 @@ namespace TBS.Application.Profiles
             CreateMap<Country, CountryDto>();
             CreateMap<City, CityDto>()
                 .ForMember(dest => dest.CountryName, opt => opt.MapFrom(src => src.Country.Name));
-            CreateMap<Airport, AirportDto>()
-                .ForMember(dest => dest.CityName, opt => opt.MapFrom(src => src.City.Name));
+           
             CreateMap<Flight, FlightDto>()
              .ForMember(dest => dest.DepartureAirportName, opt => opt.MapFrom(src => src.DepartureAirport.Name))
              .ForMember(dest => dest.ArrivalAirportName, opt => opt.MapFrom(src => src.ArrivalAirport.Name))
@@ -61,6 +61,14 @@ namespace TBS.Application.Profiles
 
             CreateMap<CreateHotelBookingDto, HotelBooking>();
             CreateMap<UpdateHotelBookingDto, HotelBooking>();
+
+            CreateMap<FlightBooking, FlightBookingDto>()
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString())); 
+            CreateMap<CreateFlightBookingDto, FlightBooking>();
+            CreateMap<UpdateFlightBookingDto, FlightBooking>();
+
+            CreateMap<FlightBookingPassenger, FlightBookingPassengerDto>()
+                .ForMember(dest => dest.PassengerName, opt => opt.MapFrom(src => src.Passenger.FirstName));
 
             CreateMap<HotelBookingRoom, HotelBookingRoomDto>()
                 .ForMember(dest => dest.RoomName, opt => opt.MapFrom(src => src.Room.Name));

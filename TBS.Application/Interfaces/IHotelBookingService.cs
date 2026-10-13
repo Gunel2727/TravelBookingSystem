@@ -15,5 +15,6 @@ namespace TBS.Application.Interfaces
         Task<HotelBookingDto> UpdateAsync(Guid id,UpdateHotelBookingDto dto, CancellationToken cancellationToken = default);
         Task CancelBookingAsync(Guid id, CancellationToken cancellationToken = default);
         Task<bool> IsRoomAvailableAsync(Guid roomId, DateTime checkInDate, DateTime checkOutDate,CancellationToken cancellationToken = default);
+        Task<IList<HotelBookingDto>> GetBookingsByUserIdAsync(CancellationToken cancellationToken = default);
     }
 }

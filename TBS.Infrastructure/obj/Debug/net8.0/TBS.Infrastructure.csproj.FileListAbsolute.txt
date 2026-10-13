@@ -34,3 +34,5 @@ C:\Projects\TravelBookingSystem\TBS.Infrastructure\obj\Debug\net8.0\refint\TBS.I
 C:\Projects\TravelBookingSystem\TBS.Infrastructure\obj\Debug\net8.0\TBS.Infrastructure.pdb
 C:\Projects\TravelBookingSystem\TBS.Infrastructure\obj\Debug\net8.0\TBS.Infrastructure.genruntimeconfig.cache
 C:\Projects\TravelBookingSystem\TBS.Infrastructure\obj\Debug\net8.0\ref\TBS.Infrastructure.dll
+C:\Projects\TravelBookingSystem\TBS.Infrastructure\bin\Debug\net8.0\TBS.Application.dll
+C:\Projects\TravelBookingSystem\TBS.Infrastructure\bin\Debug\net8.0\TBS.Application.pdb

@@ -14,6 +14,7 @@ namespace TBS.Application.Interfaces
         Task<FlightBookingDto> AddAsync(CreateFlightBookingDto dto, CancellationToken cancellationToken = default);
         Task<FlightBookingDto> UpdateAsync(Guid id, UpdateFlightBookingDto dto, CancellationToken cancellationToken = default);
         Task DeleteAsync(Guid id, CancellationToken cancellationToken = default);
+        Task<IList<FlightBookingDto>> GetBookingsByUserIdAsync(CancellationToken cancellationToken = default);
 
     }
 }

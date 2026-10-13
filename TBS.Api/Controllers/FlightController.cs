@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TBS.Application.Common;
 using TBS.Application.DTOs.Flight;
@@ -32,6 +33,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateFlight([FromBody] CreateFlightDto dto,CancellationToken cancellationToken=default)
         {
             var flight = await _flightService.AddAsync(dto,cancellationToken);
@@ -39,6 +41,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpPut("{id:guid}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateFlight(Guid id, [FromBody] UpdateFlightDto dto,CancellationToken cancellationToken=default)
         {
             var flight = await _flightService.UpdateAsync(id, dto,cancellationToken);
@@ -46,6 +49,7 @@ namespace TBS.Api.Controllers
         }
 
         [HttpDelete("{id:guid}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteFlight(Guid id,CancellationToken cancellationToken=default)
         {
             await _flightService.DeleteAsync(id,cancellationToken);

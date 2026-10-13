@@ -77,7 +77,10 @@ namespace TBS.Application.Services
             return new AuthResponseDto
             {
                 IsSuccess = true,
-                Token = tokenString
+                Token = tokenString,
+                Expiration = token.ValidTo,
+                RefreshToken=Guid.NewGuid().ToString(),
+                Message = "Uğurlu giriş"
             };
 
         }

@@ -97,6 +97,18 @@ namespace TBS.Application.Services
             return _mapper.Map<IList<FlightBookingDto>>(flightBooking);
         }
 
+        public async Task<IList<FlightBookingDto>> GetBookingsByUserIdAsync(CancellationToken cancellationToken = default)
+        {
+            var userId = _currentUserService.UserId;
+            if (userId ==Guid.Empty)
+            {
+                throw new UnauthorizedException("Sistemə daxil olmalısınız.");
+            }
+           
+            var flightBookings=await _unitOfWork.FlightBookingRepository.GetBookingsByUserIdAsync(userId, cancellationToken);
+            return _mapper.Map<IList<FlightBookingDto>>(flightBookings);
+        }
+
         public async Task<FlightBookingDto> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
             var flightBooking=await _unitOfWork.FlightBookingRepository.GetByIdAsync(id,cancellationToken);

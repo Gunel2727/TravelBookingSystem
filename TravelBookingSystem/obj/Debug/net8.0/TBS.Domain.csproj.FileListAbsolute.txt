@@ -24,3 +24,4 @@ C:\Projects\TravelBookingSystem\TravelBookingSystem\obj\Debug\net8.0\TBS.Domain.
 C:\Projects\TravelBookingSystem\TravelBookingSystem\obj\Debug\net8.0\refint\TBS.Domain.dll
 C:\Projects\TravelBookingSystem\TravelBookingSystem\obj\Debug\net8.0\TBS.Domain.pdb
 C:\Projects\TravelBookingSystem\TravelBookingSystem\obj\Debug\net8.0\ref\TBS.Domain.dll
+C:\Projects\TravelBookingSystem\TravelBookingSystem\obj\Debug\net8.0\TBS.Domain.csproj.Up2Date

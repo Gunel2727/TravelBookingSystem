@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -10,6 +11,7 @@ using TBS.Infrastructure.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
 builder.Services.AddEndpointsApiExplorer();
@@ -50,7 +52,8 @@ var app = builder.Build();
 
 using(var scope=app.Services.CreateScope())
 {
-    await DbInitializer.SeedRoleAsync(scope.ServiceProvider);
+    var services = scope.ServiceProvider;
+    await DbInitializer.SeedDataAsync(services);
 }
 
 if (app.Environment.IsDevelopment())

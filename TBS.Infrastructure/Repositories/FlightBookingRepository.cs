@@ -38,5 +38,17 @@ namespace TBS.Infrastructure.Repositories
                 .Include(fb => fb.Payments)
                 .ToListAsync(cancellationToken);
         }
+
+        public async Task<IList<FlightBooking>> GetBookingsByUserIdAsync(Guid userId, CancellationToken cancellationToken = default)
+        {
+            return await _context.FlightBookings
+                .AsNoTracking()
+                .Where(fb => fb.ApplicationUser.Id == userId)
+                .Include(fb => fb.Flight)
+                .Include(fb => fb.FlightBookingPassengers)
+                    .ThenInclude(fbp => fbp.Passenger)
+                 .Include(fb => fb.Payments)
+                .ToListAsync(cancellationToken);
+        }
     }
 }
