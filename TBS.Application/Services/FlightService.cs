@@ -51,7 +51,7 @@ namespace TBS.Application.Services
         {
             var flight = await _unitOfWork.FlightRepository.GetByIdAsync(id,cancellationToken);
             if (flight == null) throw new NotFoundException(ErrorMessages.FlightNotFound);
-            return _mapper.Map<FlightDto>(flight);`
+            return _mapper.Map<FlightDto>(flight);
         
         }
 

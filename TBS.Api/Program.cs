@@ -5,18 +5,28 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using TBS.Api.Middlewares;
 using TBS.Application;
+using TBS.Application.Interfaces;  
 using TBS.Infrastructure;
 using TBS.Infrastructure.Data;
+using TBS.Infrastructure.Services;  
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddInfrastructure(builder.Configuration);
+
+
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration.GetConnectionString("Redis");
+    options.InstanceName = "TBS_";
+});
+
+builder.Services.AddScoped<ICacheService, CacheService>();
+
 builder.Services.AddApplication();
 builder.Services.AddEndpointsApiExplorer();
-
-
 builder.Services.AddSwaggerGen(options =>
 {
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -45,12 +55,9 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
-
-
-
 var app = builder.Build();
 
-using(var scope=app.Services.CreateScope())
+using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     await DbInitializer.SeedDataAsync(services);
@@ -64,11 +71,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseHttpsRedirection();
-
-
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
