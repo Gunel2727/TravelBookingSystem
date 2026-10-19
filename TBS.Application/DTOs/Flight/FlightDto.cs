@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TBS.Application.DTOs.Common;
 using TBS.Domain.Entitites;
 
 namespace TBS.Application.DTOs.Flight
@@ -48,7 +49,7 @@ namespace TBS.Application.DTOs.Flight
         public decimal Price { get; set; }
         public int StopCount { get; set; }
     }
-    public class FilterFlightDto
+    public class FilterFlightDto:PageRequestDto
     {
         public Guid? DepartureAirportId { get; set; }
         public Guid? ArrivalAirportId { get; set; }

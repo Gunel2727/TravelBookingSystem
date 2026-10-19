@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using TBS.Application.Common;
 using TBS.Application.DTOs.Hotel;
 using TBS.Application.Interfaces;
+using TBS.Domain.Common;
 
 namespace TBS.Api.Controllers
 {
@@ -57,10 +58,10 @@ namespace TBS.Api.Controllers
         }
 
         [HttpGet("filter")]
-        public async Task<IActionResult> FilterHotels([FromQuery] FilterHotelDto dto, CancellationToken cancellationToken = default)
+        public async Task<IActionResult> FilterHotels([FromQuery] HotelFilterDto dto, CancellationToken cancellationToken = default)
         {
-            var hotels = await _hotelService.GetFilteredAsync(dto,cancellationToken);
-            return Ok(ResponseModel<IList<HotelDto>>.Ok(hotels));
+            var hotels = await _hotelService.GetFilteredHotelsAsync(dto,cancellationToken);
+            return Ok(ResponseModel<PagedList<HotelDto>>.Ok(hotels));
         }
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using TBS.Application.Common;
 using TBS.Application.DTOs.Flight;
 using TBS.Application.Interfaces;
+using TBS.Domain.Common;
 
 namespace TBS.Api.Controllers
 {
@@ -59,8 +60,8 @@ namespace TBS.Api.Controllers
         [HttpGet("filter")]
         public async Task<IActionResult> FilterFlights([FromQuery] FilterFlightDto dto,CancellationToken cancellationToken=default)
         {
-            var flights = await _flightService.GetFilteredAsync(dto,cancellationToken);
-            return Ok(ResponseModel<IList<FlightDto>>.Ok(flights));
+            var flights = await _flightService.GetFilteredFlightsAsync(dto,cancellationToken);
+            return Ok(ResponseModel<PagedList<FlightDto>>.Ok(flights));
         }
     }
 }

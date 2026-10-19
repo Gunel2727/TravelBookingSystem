@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TBS.Application.Common;
 using TBS.Application.DTOs.Flight;
 using TBS.Application.Interfaces;
+using TBS.Domain.Common;
 using TBS.Domain.Entitites;
 using TBS.Domain.Enums;
 using TBS.Domain.Interfaces;
@@ -50,14 +51,19 @@ namespace TBS.Application.Services
         {
             var flight = await _unitOfWork.FlightRepository.GetByIdAsync(id,cancellationToken);
             if (flight == null) throw new NotFoundException(ErrorMessages.FlightNotFound);
-            return _mapper.Map<FlightDto>(flight);
+            return _mapper.Map<FlightDto>(flight);`
         
         }
 
-        public async Task<IList<FlightDto>> GetFilteredAsync(FilterFlightDto dto,CancellationToken cancellationToken=default)
+        public async Task<PagedList<FlightDto>> GetFilteredFlightsAsync(FilterFlightDto dto,CancellationToken cancellationToken=default)
         {
-            var flights = await _unitOfWork.FlightRepository.GetFilteredAsync(dto.DepartureAirportId, dto.ArrivalAirportId, dto.DepartureDate,cancellationToken);
-            return _mapper.Map<IList<FlightDto>>(flights);
+            var flights = await _unitOfWork.FlightRepository.GetFilteredFlightsAsync(dto.DepartureAirportId, dto.ArrivalAirportId, dto.DepartureDate,dto.PageNumber,dto.PageSize,cancellationToken);
+            var flightDtos = _mapper.Map<IReadOnlyCollection<FlightDto>>(flights.Items);
+            return new PagedList<FlightDto>(
+                flightDtos,
+                flights.TotalCount,
+                flights.PageNumber,
+                dto.PageSize);
         }
 
         public async Task<FlightDto> UpdateAsync(Guid id, UpdateFlightDto dto,CancellationToken cancellationToken=default)

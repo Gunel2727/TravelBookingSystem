@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TBS.Application.DTOs.Flight;
+using TBS.Domain.Common;
 
 namespace TBS.Application.Interfaces
 {
@@ -14,6 +15,6 @@ namespace TBS.Application.Interfaces
         Task<FlightDto> AddAsync(CreateFlightDto dto,CancellationToken cancellationToken=default);
         Task<FlightDto> UpdateAsync(Guid id, UpdateFlightDto dto,CancellationToken cancellationToken=default);
         Task DeleteAsync(Guid id,CancellationToken cancellationToken=default);
-        Task<IList<FlightDto>> GetFilteredAsync(FilterFlightDto dto,CancellationToken cancellationToken=default);
+        Task<PagedList<FlightDto>> GetFilteredFlightsAsync(FilterFlightDto dto,CancellationToken cancellationToken=default);
     }
 }

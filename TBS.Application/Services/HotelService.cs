@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TBS.Application.Common;
 using TBS.Application.DTOs.Hotel;
 using TBS.Application.Interfaces;
+using TBS.Domain.Common;
 using TBS.Domain.Entitites;
 using TBS.Domain.Interfaces;
 
@@ -52,10 +53,17 @@ namespace TBS.Application.Services
             return _mapper.Map<HotelDto>(hotel);
         }
 
-        public async Task<IList<HotelDto>> GetFilteredAsync(FilterHotelDto dto, CancellationToken cancellationToken = default)
+        public async Task<PagedList<HotelDto>> GetFilteredHotelsAsync(HotelFilterDto dto, CancellationToken cancellationToken = default)
         {
-            var hotels = await _unitOfWork.HotelRepository.GetFilteredAsync(dto.Search, dto.CityId,cancellationToken);
-            return _mapper.Map<IList<HotelDto>>(hotels);
+            var hotels = await _unitOfWork.HotelRepository.GetFilteredHotelsAsync(dto.SearchTerm,
+                dto.CityId, dto.MinPrice, dto.MaxPrice, dto.Rating,dto.PageNumber, dto.PageSize
+                , cancellationToken);
+            var hotelDtos = _mapper.Map<IReadOnlyCollection<HotelDto>>(hotels.Items);
+            return new PagedList<HotelDto>(
+                 hotelDtos,
+                 hotels.TotalCount,
+                 hotels.PageNumber,
+                 dto.PageSize);
         }
 
         public async Task<HotelDto> UpdateAsync(Guid id, UpdateHotelDto dto, CancellationToken cancellationToken = default)
