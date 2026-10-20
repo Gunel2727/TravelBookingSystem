@@ -1,30 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace TBS.Domain.Common
 {
     public class PagedList<T>
     {
-        public IReadOnlyCollection<T> Items { get; private set; }
-        public int PageNumber { get; private set; }
-        public int PageSize { get; private set; }
-        public int TotalPages { get; private set; }
-        public int TotalCount { get; private set; }
+        public IReadOnlyCollection<T> Items { get; set; }
+        public int PageNumber { get; set; }
+        public int PageSize { get; set; }
+        public int TotalPages { get; set; }
+        public int TotalCount { get; set; }
         public bool HasPrevious => PageNumber > 1;
         public bool HasNext => PageNumber < TotalPages;
-        public PagedList(IReadOnlyCollection<T> items,
-            int count,
-            int pageNumber,
-            int pageSize)
+
+       
+        public PagedList()
+        {
+            Items = new List<T>();
+        }
+
+       
+        [JsonConstructor]
+        public PagedList(IReadOnlyCollection<T> items, int totalCount, int pageNumber, int pageSize)
         {
             Items = items;
-            TotalCount = count;
+            TotalCount = totalCount;
             PageSize = pageSize;
             PageNumber = pageNumber;
-            TotalPages = (int)Math.Ceiling(count / (double)pageSize);
+            TotalPages = (int)Math.Ceiling(totalCount / (double)pageSize);
         }
     }
 }

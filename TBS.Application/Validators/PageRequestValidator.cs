@@ -12,9 +12,9 @@ namespace TBS.Application.Validators
     {
         public PageRequestValidator()
         {
-            RuleFor(x => x.pageNumber)
+            RuleFor(x => x.PageNumber)
                 .GreaterThan(0).WithMessage("Səhifə nömrəsi 0-dan böyük olmalıdır.");
-            RuleFor(x => x.pageSize)
+            RuleFor(x => x.PageSize)
                 .GreaterThan(0).WithMessage("Səhifə ölçüsü 0-dan böyük olmalıdır.")
                 .LessThanOrEqualTo(50).WithMessage("Səhifə ölçüsü ən çoxu 50 ola bilər.");
         }
