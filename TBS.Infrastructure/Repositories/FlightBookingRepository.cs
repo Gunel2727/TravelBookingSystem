@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using TBS.Domain.Entitites;
 using TBS.Domain.Interfaces;
@@ -16,25 +17,29 @@ namespace TBS.Infrastructure.Repositories
         {
         }
 
-        public override async Task<FlightBooking> GetByIdAsync(Guid id,CancellationToken cancellationToken)
+        public override async Task<FlightBooking> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
             return await _context.FlightBookings
                 .Include(fb => fb.ApplicationUser)
-                .Include(fb=>fb.Flight)
+                .Include(fb => fb.Flight)
                 .Include(fb => fb.FlightBookingPassengers)
                     .ThenInclude(fbp => fbp.Passenger)
+                .Include(fb => fb.FlightBookingPassengers)
+                    .ThenInclude(fbp => fbp.Flight) 
                 .Include(fb => fb.Payments)
-                .FirstOrDefaultAsync(fb => fb.Id == id,cancellationToken);
+                .FirstOrDefaultAsync(fb => fb.Id == id, cancellationToken);
         }
 
-        public override async Task<IList<FlightBooking>> GetAllAsync(CancellationToken cancellationToken)
+        public override async Task<IList<FlightBooking>> GetAllAsync(CancellationToken cancellationToken = default)
         {
             return await _context.FlightBookings
                 .AsNoTracking()
                 .Include(fb => fb.ApplicationUser)
-                .Include(fb => fb.Flight) 
+                .Include(fb => fb.Flight)
                 .Include(fb => fb.FlightBookingPassengers)
                     .ThenInclude(fbp => fbp.Passenger)
+                .Include(fb => fb.FlightBookingPassengers)
+                    .ThenInclude(fbp => fbp.Flight) 
                 .Include(fb => fb.Payments)
                 .ToListAsync(cancellationToken);
         }
@@ -47,7 +52,9 @@ namespace TBS.Infrastructure.Repositories
                 .Include(fb => fb.Flight)
                 .Include(fb => fb.FlightBookingPassengers)
                     .ThenInclude(fbp => fbp.Passenger)
-                 .Include(fb => fb.Payments)
+                .Include(fb => fb.FlightBookingPassengers)
+                    .ThenInclude(fbp => fbp.Flight) 
+                .Include(fb => fb.Payments)
                 .ToListAsync(cancellationToken);
         }
     }

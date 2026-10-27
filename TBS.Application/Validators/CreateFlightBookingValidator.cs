@@ -1,27 +1,20 @@
 ﻿using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TBS.Application.DTOs.FlightBooking;
 
 namespace TBS.Application.Validators
 {
-    public class CreateFlightBookingValidator:AbstractValidator<CreateFlightBookingDto>
+    public class CreateFlightBookingValidator : AbstractValidator<CreateFlightBookingDto>
     {
         public CreateFlightBookingValidator()
         {
             RuleFor(fb => fb.FlightId)
-                .NotEmpty().WithMessage("Flight id bos ola bilmez");
+                .NotEmpty().WithMessage("Uçuş ID-si boş ola bilməz.");
 
-            RuleFor(fb => fb.PassengerIds)
-                .NotEmpty().WithMessage("Ən azı bir sərnişin seçilməlidir.");
+            RuleFor(fb => fb.Passengers)
+                .NotEmpty().WithMessage("Ən azı bir sərnişin daxil edilməlidir.");
 
-            RuleForEach(fb => fb.PassengerIds)
-                .NotEmpty().WithMessage("Passenger ids bos ola bilmez");
-
-            
+            RuleForEach(fb => fb.Passengers)
+                .SetValidator(new CreatePassengerValidator());
         }
     }
 }

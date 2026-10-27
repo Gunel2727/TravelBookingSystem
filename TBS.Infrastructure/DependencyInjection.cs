@@ -74,6 +74,7 @@ namespace TBS.Infrastructure
             services.AddScoped<IFlightBookingRepository, FlightBookingRepository>();
             services.AddScoped<IAirlineRepository, AirlineRepository>();
             services.AddScoped<IAirportRepository, AirportRepository>();
+            services.AddScoped<IPassengerRepository, PassengerRepository>();
 
             services.AddHttpContextAccessor();
             services.AddScoped<ICurrentUserService, CurrentUserService>();

@@ -15,6 +15,7 @@ namespace TBS.Domain.Interfaces
         IPaymentRepository PaymentRepository { get; }
         IFlightBookingRepository FlightBookingRepository { get; }
         IAirportRepository AirportRepository { get; }
+        IPassengerRepository PassengerRepository { get; }
         IAirlineRepository AirlineRepository { get; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);

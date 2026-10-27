@@ -25,6 +25,7 @@ namespace TBS.Infrastructure.Repositories
         private IFlightBookingRepository _flightBookingRepository;
         private IAirportRepository _airportRepository;
         private IAirlineRepository _airlineRepository;
+        private IPassengerRepository _passengerRepository;
 
         public IFlightRepository FlightRepository =>
             _flightRepository ??= new FlightRepository(_context);
@@ -50,6 +51,8 @@ namespace TBS.Infrastructure.Repositories
         public IAirlineRepository AirlineRepository => 
             _airlineRepository ??= new AirlineRepository(_context);
 
+        public IPassengerRepository PassengerRepository =>
+            _passengerRepository ??= new PassengerRepository(_context);
         public void Dispose()
         {
            _context.Dispose();

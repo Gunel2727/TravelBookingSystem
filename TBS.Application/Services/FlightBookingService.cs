@@ -29,12 +29,12 @@ namespace TBS.Application.Services
 
         public async Task<FlightBookingDto> AddAsync(CreateFlightBookingDto dto, CancellationToken cancellationToken = default)
         {
-            if(!dto.PassengerIds.Any())
+            if(!dto.Passengers.Any())
             {
                 throw new BadRequestException("Ən azı bir sərnişin seçilməlidir.");
 
             }
-            if(dto.PassengerIds.Distinct().Count() != dto.PassengerIds.Count)
+            if(dto.Passengers.Select(p=>p.PassportNumber).Distinct().Count() != dto.Passengers.Count)
             {
                 throw new BadRequestException("Sərnişinlər təkrarlana bilməz.");
             }
@@ -43,11 +43,12 @@ namespace TBS.Application.Services
             {
                 throw new NotFoundException("Uçuş tapılmadı.");
             }
-          if(dto.PassengerIds.Count > flight.AvailableSeats)
+          if(dto.Passengers.Count > flight.AvailableSeats)
             {
                 throw new BadRequestException($"Uçuşda kifayət qədər boş yer yoxdur. Qalan yer sayı: {flight.AvailableSeats}");
 
             }
+           
             var flightBooking = _mapper.Map<FlightBooking>(dto);
 
             flightBooking.ApplicationUserId = _currentUserService.UserId;
@@ -56,15 +57,31 @@ namespace TBS.Application.Services
             flightBooking.FlightBookingNumber = $"FBN-{Guid.NewGuid().ToString("N")[..6].ToUpper()}";
             flightBooking.BookingDate = DateTime.UtcNow;
             flightBooking.Status = BookingStatus.Pending;
-            flightBooking.TotalPrice = flight.Price * dto.PassengerIds.Count;
+            flightBooking.TotalPrice = flight.Price * dto.Passengers.Count;
 
-            flightBooking.FlightBookingPassengers=dto.PassengerIds.Select(passengerId => new FlightBookingPassenger
+
+            var flightBookingPassengers = new List<FlightBookingPassenger>();
+
+            foreach(var passengerDto in dto.Passengers)
             {
-                PassengerId = passengerId
-               
-            }).ToList();
+                var passenger=await _unitOfWork.PassengerRepository.GetByPassportNumberAsync(passengerDto.PassportNumber, cancellationToken);
+                if(passenger==null)
+                {
+                    passenger = _mapper.Map<Passenger>(passengerDto);
+                    await _unitOfWork.PassengerRepository.AddAsync(passenger);
+                }
 
-            flight.AvailableSeats -= dto.PassengerIds.Count;
+                flightBookingPassengers.Add(new FlightBookingPassenger
+                {
+                    Passenger=passenger,
+                    FlightId = flight.Id,
+                    Flight= flight
+                });
+            }
+
+            flightBooking.FlightBookingPassengers = flightBookingPassengers;
+
+            flight.AvailableSeats -= dto.Passengers.Count;
             _unitOfWork.FlightRepository.Update(flight);
 
             await _unitOfWork.FlightBookingRepository.AddAsync(flightBooking);

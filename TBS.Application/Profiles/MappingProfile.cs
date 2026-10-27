@@ -13,6 +13,7 @@ using TBS.Application.DTOs.Flight;
 using TBS.Application.DTOs.FlightBooking;
 using TBS.Application.DTOs.Hotel;
 using TBS.Application.DTOs.HotelBooking;
+using TBS.Application.DTOs.Passenger;
 using TBS.Application.DTOs.Payment;
 using TBS.Application.DTOs.Review;
 using TBS.Application.DTOs.Room;
@@ -64,11 +65,13 @@ namespace TBS.Application.Profiles
 
             CreateMap<FlightBooking, FlightBookingDto>()
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString())); 
-            CreateMap<CreateFlightBookingDto, FlightBooking>();
+           
             CreateMap<UpdateFlightBookingDto, FlightBooking>();
 
             CreateMap<FlightBookingPassenger, FlightBookingPassengerDto>()
-                .ForMember(dest => dest.PassengerName, opt => opt.MapFrom(src => src.Passenger.FirstName));
+            .ForMember(dest => dest.PassengerName, opt => opt.MapFrom(src => src.Passenger.FirstName))
+            .ForMember(dest => dest.FlightName, opt => opt.MapFrom(src => src.Flight.FlightNumber))
+            .ForMember(dest => dest.FlightBookingName, opt => opt.MapFrom(src => src.FlightBooking.FlightBookingNumber));
 
             CreateMap<HotelBookingRoom, HotelBookingRoomDto>()
                 .ForMember(dest => dest.RoomName, opt => opt.MapFrom(src => src.Room.Name));
@@ -91,8 +94,9 @@ namespace TBS.Application.Profiles
             CreateMap<UpdateAirportDto, Airport>();
 
             CreateMap<RegisterDto, ApplicationUser>();
-
-
+            CreateMap<CreatePassengerDto, Passenger>();
+            CreateMap<CreateFlightBookingDto, FlightBooking>()
+            .ForMember(dest => dest.FlightBookingPassengers, opt => opt.Ignore());
         }
      }
 }
