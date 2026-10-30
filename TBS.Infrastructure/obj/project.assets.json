@@ -1302,6 +1302,7 @@
           "AutoMapper": "16.2.0",
           "FluentValidation.DependencyInjectionExtensions": "12.1.1",
           "Microsoft.AspNetCore.Http.Abstractions": "2.3.13",
+          "Microsoft.EntityFrameworkCore": "8.0.0",
           "Microsoft.Extensions.Configuration": "8.0.0",
           "Microsoft.IdentityModel.Tokens": "8.23.0",
           "System.IdentityModel.Tokens.Jwt": "8.23.0",

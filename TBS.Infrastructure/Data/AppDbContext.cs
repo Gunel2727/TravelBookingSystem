@@ -7,10 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using TBS.Domain.Entitites;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using TBS.Application.Interfaces;
 
 namespace TBS.Infrastructure.Data
 {
-    public class AppDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
+    public class AppDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>,IAppDbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)

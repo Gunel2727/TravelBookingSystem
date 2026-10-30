@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "NaaTN1AKVuE=",
+  "dgSpecHash": "PmLDfmpBpQY=",
   "success": true,
   "projectFilePath": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\TBS.Application.csproj",
   "expectedPackageFiles": [
@@ -12,7 +12,11 @@
     "C:\\Users\\gunel\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.3.13\\microsoft.aspnetcore.http.abstractions.2.3.13.nupkg.sha512",
     "C:\\Users\\gunel\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.3.12\\microsoft.aspnetcore.http.features.2.3.12.nupkg.sha512",
     "C:\\Users\\gunel\\.nuget\\packages\\microsoft.bcl.cryptography\\10.0.2\\microsoft.bcl.cryptography.10.0.2.nupkg.sha512",
+    "C:\\Users\\gunel\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.0\\microsoft.entityframeworkcore.8.0.0.nupkg.sha512",
+    "C:\\Users\\gunel\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.0\\microsoft.entityframeworkcore.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\gunel\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.0\\microsoft.entityframeworkcore.analyzers.8.0.0.nupkg.sha512",
     "C:\\Users\\gunel\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\gunel\\.nuget\\packages\\microsoft.extensions.caching.memory\\8.0.0\\microsoft.extensions.caching.memory.8.0.0.nupkg.sha512",
     "C:\\Users\\gunel\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "C:\\Users\\gunel\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\gunel\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",

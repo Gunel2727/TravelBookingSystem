@@ -3,52 +3,40 @@
   "WorkspaceRootPath": "C:\\Projects\\TravelBookingSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\interfaces\\icacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\interfaces\\icacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\services\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\services\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\interfaces\\iappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\interfaces\\iappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\profiles\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\profiles\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\services\\flightbookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\services\\flightbookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\validators\\resetpasswordvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\validators\\resetpasswordvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\validators\\createflightbookingvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\validators\\createflightbookingvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\dtos\\auth\\refreshtokendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\dtos\\auth\\refreshtokendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\validators\\createpassengervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\validators\\createpassengervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\validators\\forgotpasswordvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\validators\\forgotpasswordvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBB62E49-C9E1-6657-24E1-4D91E5C3B293}|TBS.Infrastructure\\TBS.Infrastructure.csproj|c:\\projects\\travelbookingsystem\\tbs.infrastructure\\repositories\\passengerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBB62E49-C9E1-6657-24E1-4D91E5C3B293}|TBS.Infrastructure\\TBS.Infrastructure.csproj|solutionrelative:tbs.infrastructure\\repositories\\passengerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\dtos\\auth\\resetpassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\dtos\\auth\\resetpassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|c:\\projects\\travelbookingsystem\\travelbookingsystem\\interfaces\\ipassengerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\interfaces\\ipassengerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\dtos\\auth\\forgotpassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\dtos\\auth\\forgotpassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBB62E49-C9E1-6657-24E1-4D91E5C3B293}|TBS.Infrastructure\\TBS.Infrastructure.csproj|c:\\projects\\travelbookingsystem\\tbs.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBB62E49-C9E1-6657-24E1-4D91E5C3B293}|TBS.Infrastructure\\TBS.Infrastructure.csproj|solutionrelative:tbs.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\dtos\\passenger\\createpassengerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\dtos\\passenger\\createpassengerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\dtos\\flightbooking\\flightbookingpassengerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\dtos\\flightbooking\\flightbookingpassengerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|c:\\projects\\travelbookingsystem\\tbs.application\\dtos\\flightbooking\\flightbookingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7220D411-0030-AE72-EFDB-917A558B93B8}|TBS.Application\\TBS.Application.csproj|solutionrelative:tbs.application\\dtos\\flightbooking\\flightbookingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|c:\\projects\\travelbookingsystem\\travelbookingsystem\\entitites\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBA7589D-2CBA-5599-1826-54B68D0C9E15}|TravelBookingSystem\\TBS.Domain.csproj|solutionrelative:travelbookingsystem\\entitites\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,166 +46,123 @@
       "DocumentGroups": [
         {
           "DockedHeight": 367,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ICacheService.cs",
-              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Interfaces\\ICacheService.cs",
-              "RelativeDocumentMoniker": "TBS.Application\\Interfaces\\ICacheService.cs",
-              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Interfaces\\ICacheService.cs",
-              "RelativeToolTip": "TBS.Application\\Interfaces\\ICacheService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T21:57:38.706Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PaymentService.cs",
-              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Services\\PaymentService.cs",
-              "RelativeDocumentMoniker": "TBS.Application\\Services\\PaymentService.cs",
-              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Services\\PaymentService.cs",
-              "RelativeToolTip": "TBS.Application\\Services\\PaymentService.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Title": "IAppDbContext.cs",
+              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Interfaces\\IAppDbContext.cs",
+              "RelativeDocumentMoniker": "TBS.Application\\Interfaces\\IAppDbContext.cs",
+              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Interfaces\\IAppDbContext.cs",
+              "RelativeToolTip": "TBS.Application\\Interfaces\\IAppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T21:52:06.148Z",
+              "WhenOpened": "2026-10-30T05:05:33.63Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CreateFlightBookingValidator.cs",
-              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Validators\\CreateFlightBookingValidator.cs",
-              "RelativeDocumentMoniker": "TBS.Application\\Validators\\CreateFlightBookingValidator.cs",
-              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Validators\\CreateFlightBookingValidator.cs",
-              "RelativeToolTip": "TBS.Application\\Validators\\CreateFlightBookingValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "TBS.Application\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Services\\AuthService.cs",
+              "RelativeToolTip": "TBS.Application\\Services\\AuthService.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAADwv2AAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T21:28:00.892Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IPassengerRepository.cs",
-              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TravelBookingSystem\\Interfaces\\IPassengerRepository.cs",
-              "RelativeDocumentMoniker": "TravelBookingSystem\\Interfaces\\IPassengerRepository.cs",
-              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TravelBookingSystem\\Interfaces\\IPassengerRepository.cs",
-              "RelativeToolTip": "TravelBookingSystem\\Interfaces\\IPassengerRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T21:16:27.626Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FlightBookingService.cs",
-              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Services\\FlightBookingService.cs",
-              "RelativeDocumentMoniker": "TBS.Application\\Services\\FlightBookingService.cs",
-              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Services\\FlightBookingService.cs",
-              "RelativeToolTip": "TBS.Application\\Services\\FlightBookingService.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAiwE0AAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T20:58:42.692Z",
+              "WhenOpened": "2026-10-30T04:25:40.087Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Profiles\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "TBS.Application\\Profiles\\MappingProfile.cs",
-              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Profiles\\MappingProfile.cs",
-              "RelativeToolTip": "TBS.Application\\Profiles\\MappingProfile.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAwEgAAABjAAAAAAAAAA==",
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "TBS.Application\\Interfaces\\IAuthService.cs",
+              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "TBS.Application\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T20:57:05.997Z",
+              "WhenOpened": "2026-10-30T04:23:50.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ResetPasswordValidator.cs",
+              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Validators\\ResetPasswordValidator.cs",
+              "RelativeDocumentMoniker": "TBS.Application\\Validators\\ResetPasswordValidator.cs",
+              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Validators\\ResetPasswordValidator.cs",
+              "RelativeToolTip": "TBS.Application\\Validators\\ResetPasswordValidator.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAuwBgAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-30T04:22:53.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RefreshTokenDto.cs",
+              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\DTOs\\Auth\\RefreshTokenDto.cs",
+              "RelativeDocumentMoniker": "TBS.Application\\DTOs\\Auth\\RefreshTokenDto.cs",
+              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\DTOs\\Auth\\RefreshTokenDto.cs",
+              "RelativeToolTip": "TBS.Application\\DTOs\\Auth\\RefreshTokenDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-30T04:17:22.166Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "CreatePassengerValidator.cs",
-              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Validators\\CreatePassengerValidator.cs",
-              "RelativeDocumentMoniker": "TBS.Application\\Validators\\CreatePassengerValidator.cs",
-              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Validators\\CreatePassengerValidator.cs",
-              "RelativeToolTip": "TBS.Application\\Validators\\CreatePassengerValidator.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAAwB8AAABmAAAAAAAAAA==",
+              "Title": "ForgotPasswordValidator.cs",
+              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Validators\\ForgotPasswordValidator.cs",
+              "RelativeDocumentMoniker": "TBS.Application\\Validators\\ForgotPasswordValidator.cs",
+              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\Validators\\ForgotPasswordValidator.cs",
+              "RelativeToolTip": "TBS.Application\\Validators\\ForgotPasswordValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T21:29:13.951Z",
+              "WhenOpened": "2026-10-30T04:22:14.808Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "PassengerRepository.cs",
-              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Infrastructure\\Repositories\\PassengerRepository.cs",
-              "RelativeDocumentMoniker": "TBS.Infrastructure\\Repositories\\PassengerRepository.cs",
-              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Infrastructure\\Repositories\\PassengerRepository.cs",
-              "RelativeToolTip": "TBS.Infrastructure\\Repositories\\PassengerRepository.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAqwBQAAABXAAAAAAAAAA==",
+              "Title": "ResetPasswordDto.cs",
+              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\DTOs\\Auth\\ResetPasswordDto.cs",
+              "RelativeDocumentMoniker": "TBS.Application\\DTOs\\Auth\\ResetPasswordDto.cs",
+              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\DTOs\\Auth\\ResetPasswordDto.cs",
+              "RelativeToolTip": "TBS.Application\\DTOs\\Auth\\ResetPasswordDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T21:16:15.46Z",
+              "WhenOpened": "2026-10-30T04:18:54.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ForgotPasswordDto.cs",
+              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\DTOs\\Auth\\ForgotPasswordDto.cs",
+              "RelativeDocumentMoniker": "TBS.Application\\DTOs\\Auth\\ForgotPasswordDto.cs",
+              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\DTOs\\Auth\\ForgotPasswordDto.cs",
+              "RelativeToolTip": "TBS.Application\\DTOs\\Auth\\ForgotPasswordDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-30T04:18:21.353Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Infrastructure\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "TBS.Infrastructure\\DependencyInjection.cs",
-              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Infrastructure\\DependencyInjection.cs",
-              "RelativeToolTip": "TBS.Infrastructure\\DependencyInjection.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAAwFEAAAAAAAAAAAAAAA==",
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "TravelBookingSystem\\Entitites\\ApplicationUser.cs",
+              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TravelBookingSystem\\Entitites\\ApplicationUser.cs",
+              "RelativeToolTip": "TravelBookingSystem\\Entitites\\ApplicationUser.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAcwA8AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T21:21:38.688Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CreatePassengerDto.cs",
-              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\DTOs\\Passenger\\CreatePassengerDto.cs",
-              "RelativeDocumentMoniker": "TBS.Application\\DTOs\\Passenger\\CreatePassengerDto.cs",
-              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\DTOs\\Passenger\\CreatePassengerDto.cs",
-              "RelativeToolTip": "TBS.Application\\DTOs\\Passenger\\CreatePassengerDto.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAwwAsAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T20:53:55.436Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "FlightBookingPassengerDto.cs",
-              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\DTOs\\FlightBooking\\FlightBookingPassengerDto.cs",
-              "RelativeDocumentMoniker": "TBS.Application\\DTOs\\FlightBooking\\FlightBookingPassengerDto.cs",
-              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\DTOs\\FlightBooking\\FlightBookingPassengerDto.cs",
-              "RelativeToolTip": "TBS.Application\\DTOs\\FlightBooking\\FlightBookingPassengerDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T20:52:20.629Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "FlightBookingDto.cs",
-              "DocumentMoniker": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\DTOs\\FlightBooking\\FlightBookingDto.cs",
-              "RelativeDocumentMoniker": "TBS.Application\\DTOs\\FlightBooking\\FlightBookingDto.cs",
-              "ToolTip": "C:\\Projects\\TravelBookingSystem\\TBS.Application\\DTOs\\FlightBooking\\FlightBookingDto.cs",
-              "RelativeToolTip": "TBS.Application\\DTOs\\FlightBooking\\FlightBookingDto.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAA0wCEAAABiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T20:51:32.339Z",
+              "WhenOpened": "2026-10-30T04:14:51.721Z",
               "EditorCaption": ""
             }
           ]

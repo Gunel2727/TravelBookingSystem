@@ -78,6 +78,7 @@ namespace TBS.Infrastructure
 
             services.AddHttpContextAccessor();
             services.AddScoped<ICurrentUserService, CurrentUserService>();
+            services.AddScoped<IAppDbContext>(provider => provider.GetRequiredService<AppDbContext>());
 
 
             return services;

@@ -11,5 +11,9 @@ namespace TBS.Application.Interfaces
     {
         Task<AuthResponseDto> RegisterAsync(RegisterDto dto);
         Task<AuthResponseDto> LoginAsync(LoginDto dto);
+        Task<AuthResponseDto> RefreshTokenAsync(RefreshTokenDto dto,CancellationToken cancellationToken=default);
+        Task<string> ForgotPasswordAsync(ForgotPasswordDto dto,CancellationToken cancellationToken=default);
+        Task<bool> ResetPasswordAsync(ResetPasswordDto dto,CancellationToken cancellationToken=default);
+
     }
 }
