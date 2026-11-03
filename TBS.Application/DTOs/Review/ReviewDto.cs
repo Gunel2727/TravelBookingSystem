@@ -16,4 +16,11 @@ namespace TBS.Application.DTOs.Review
         public Guid HotelId { get; set; }
         public string HotelName { get; set;} = string.Empty;
     }
+
+    public class CreateReviewDto
+    {
+        public Guid HotelId { get; set; }
+        public int Rating { get; set; }
+        public string Comment { get; set; } = string.Empty;
+    }
 }

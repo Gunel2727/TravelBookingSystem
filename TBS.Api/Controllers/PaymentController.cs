@@ -18,6 +18,7 @@ namespace TBS.Api.Controllers
             _paymentService = paymentService;
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> GetAllPayments(CancellationToken cancellationToken)
         {
@@ -33,14 +34,23 @@ namespace TBS.Api.Controllers
             return Ok(ResponseModel<PaymentDto>.Ok(payment));
         }
 
-        [HttpPost]
+        [HttpPost("hotel")]
         [Authorize]
-        public async Task<IActionResult> CreatePayment([FromBody] CreatePaymentDto dto, CancellationToken cancellationToken)
+        public async Task<IActionResult> CreateHotelBookingPayment([FromBody] CreateHotelBookingPaymentDto dto, CancellationToken cancellationToken)
         {
-            var payment = await _paymentService.AddAsync(dto, cancellationToken);
+            var payment = await _paymentService.CreateHotelBookingPaymentAsync(dto, cancellationToken);
             return StatusCode(201, ResponseModel<PaymentDto>.Created(payment));
         }
 
+        [HttpPost("flight")]
+        [Authorize]
+        public async Task<IActionResult> CreateFlightBookingPayment([FromBody] CreateFlightBookingPaymentDto dto, CancellationToken cancellationToken)
+        {
+            var payment = await _paymentService.CreateFlightBookingPaymentAsync(dto, cancellationToken);
+            return StatusCode(201, ResponseModel<PaymentDto>.Created(payment));
+        }
+
+        [Authorize]
         [HttpPut("{id:guid}")]
         public async Task<IActionResult> UpdatePayment(Guid id, [FromBody] UpdatePaymentDto dto, CancellationToken cancellationToken)
         {
@@ -48,6 +58,8 @@ namespace TBS.Api.Controllers
             return Ok(ResponseModel<PaymentDto>.Ok(payment));
         }
 
+
+        [Authorize]
         [HttpDelete("{id:guid}")]
         public async Task<IActionResult> DeletePayment(Guid id, CancellationToken cancellationToken)
         {

@@ -39,7 +39,7 @@ namespace TBS.Application.Services
             return resetToken;
         }
 
-        public async Task<AuthResponseDto> LoginAsync(LoginDto dto)
+        public async Task<AuthResponseDto> LoginAsync(LoginDto dto,CancellationToken cancellationToken = default)
         {
             var user = await _userManager.FindByEmailAsync(dto.Email);
             if(user==null)
@@ -63,6 +63,8 @@ namespace TBS.Application.Services
                 ApplicationUserId = user.Id
             };
 
+            await _context.RefreshTokens.AddAsync(refreshToken);
+            await _context.SaveChangesAsync(cancellationToken);
 
             return new AuthResponseDto
             {
@@ -114,7 +116,7 @@ namespace TBS.Application.Services
 
         }
 
-        public async Task<AuthResponseDto> RegisterAsync(RegisterDto dto)
+        public async Task<AuthResponseDto> RegisterAsync(RegisterDto dto, CancellationToken cancellationToken = default)
         {
 
             var existingUser = await _userManager.FindByEmailAsync(dto.Email);
@@ -158,6 +160,17 @@ namespace TBS.Application.Services
 
             return true;
         }
+
+        public async Task<bool> RevokeTokenAsync(RevokeTokenDto dto, CancellationToken cancellationToken = default)
+        {
+           var refreshToken=await _context.RefreshTokens.FirstOrDefaultAsync(rt=>rt.Token == dto.RefreshToken, cancellationToken);
+           if(refreshToken==null)
+                throw new NotFoundException("Refresh token tapılmadı.");
+           refreshToken.RevokedAt = DateTime.UtcNow;
+            await _context.SaveChangesAsync(cancellationToken);
+            return true;
+        }
+
         private async Task<(string TokenString, DateTime Expiration)> GenerateAccessTokenAsync(ApplicationUser user)
         {
             var roles= await _userManager.GetRolesAsync(user);

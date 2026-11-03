@@ -11,7 +11,8 @@ namespace TBS.Application.Interfaces
     {
         Task<PaymentDto> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
         Task<IList<PaymentDto>> GetAllAsync(CancellationToken cancellationToken = default);
-        Task<PaymentDto> AddAsync(CreatePaymentDto dto, CancellationToken cancellationToken = default);
+        Task<PaymentDto> CreateHotelBookingPaymentAsync(CreateHotelBookingPaymentDto dto, CancellationToken cancellationToken = default);
+        Task<PaymentDto> CreateFlightBookingPaymentAsync(CreateFlightBookingPaymentDto dto, CancellationToken cancellationToken = default);
         Task<PaymentDto> UpdateAsync(Guid id, UpdatePaymentDto dto, CancellationToken cancellationToken = default);
         Task DeleteAsync(Guid id, CancellationToken cancellationToken = default);
 

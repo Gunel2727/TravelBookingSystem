@@ -17,32 +17,70 @@ namespace TBS.Application.Services
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-
-        public PaymentService(IUnitOfWork unitOfWork, IMapper mapper)
+        private readonly ICurrentUserService _currentUserService;
+        public PaymentService(IUnitOfWork unitOfWork, IMapper mapper, ICurrentUserService currentUserService)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _currentUserService = currentUserService;
         }
 
-        public async Task<PaymentDto> AddAsync(CreatePaymentDto dto, CancellationToken cancellationToken = default)
+        public async Task<PaymentDto> CreateHotelBookingPaymentAsync(CreateHotelBookingPaymentDto dto, CancellationToken cancellationToken = default)
         {
             if (dto.HotelBookingId == null)
                 throw new BadRequestException("Otel rezervasiya ID-si göndərilməlidir.");
-            var hotelBooking = await _unitOfWork.HotelBookingRepository.GetByIdAsync(dto.HotelBookingId.Value);
-            if(hotelBooking == null)
+            var userId = _currentUserService.UserId;
+            if (userId == Guid.Empty)
+                throw new BadRequestException("İstifadəçi ID-si tapılmadı.");
+            var hotelBooking = await _unitOfWork.HotelBookingRepository.GetByIdAsync(dto.HotelBookingId,cancellationToken);
+            
+            if (hotelBooking == null)
                 throw new NotFoundException("Otel rezervasiya tapılmadı.");
-            if(hotelBooking.Status == BookingStatus.Cancelled)
+           
+            if (hotelBooking.ApplicationUserId != userId)
+                throw new ForbiddenException("Bu rezervasiya üçün ödəniş etmək icazəniz yoxdur.");
+            if (hotelBooking.Status == BookingStatus.Cancelled)
                 throw new BadRequestException("Ləğv olunmuş rezervasiya üçün ödəniş edilə bilməz.");
-            if(hotelBooking.Status == BookingStatus.Completed || hotelBooking.Status == BookingStatus.Confirmed)
-                throw new BadRequestException("Tamamlanmış və ya təsdiqlənmiş rezervasiya üçün ödəniş edilə bilməz.");
             if(hotelBooking.TotalPrice != dto.Amount)
                 throw new BadRequestException("Ödənilən məbləğ bronun ümumi qiyməti ilə üst-üstə düşmür.");
             hotelBooking.Status = BookingStatus.Confirmed;
+           
+
             var payment = _mapper.Map<Payment>(dto);
+            payment.HotelBookingId = dto.HotelBookingId;
+            payment.PaymentDate = DateTime.UtcNow;
+            payment.Status = PaymentStatus.Paid;
+            hotelBooking.Status = BookingStatus.Confirmed;
+            await _unitOfWork.PaymentRepository.AddAsync(payment);
+             _unitOfWork.HotelBookingRepository.Update(hotelBooking);
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
+            return _mapper.Map<PaymentDto>(payment);
+        }
+        public async Task<PaymentDto> CreateFlightBookingPaymentAsync(CreateFlightBookingPaymentDto dto, CancellationToken cancellationToken = default)
+        {
+            if (dto.FlightBookingId == null)
+                throw new BadRequestException("Uçuş rezervasiya ID-si göndərilməlidir.");
+            var userId = _currentUserService.UserId;
+            if (userId == Guid.Empty)
+                throw new BadRequestException("İstifadəçi ID-si tapılmadı.");
+            var flightBooking = await _unitOfWork.FlightBookingRepository.GetByIdAsync(dto.FlightBookingId, cancellationToken);
+           
+            if (flightBooking == null)
+                throw new NotFoundException("Uçuş rezervasiya tapılmadı.");
+           
+            if (flightBooking.ApplicationUserId != userId)
+                throw new ForbiddenException("Bu rezervasiya üçün ödəniş etmək icazəniz yoxdur.");
+            if (flightBooking.Status == BookingStatus.Cancelled)
+                throw new BadRequestException("Ləğv olunmuş rezervasiya üçün ödəniş edilə bilməz.");
+            if (flightBooking.TotalPrice != dto.Amount)
+                throw new BadRequestException("Ödənilən məbləğ bronun ümumi qiyməti ilə üst-üstə düşmür.");
+            flightBooking.Status = BookingStatus.Confirmed;
+            var payment = _mapper.Map<Payment>(dto);
+            payment.FlightBookingId = dto.FlightBookingId;
             payment.PaymentDate = DateTime.UtcNow;
             payment.Status = PaymentStatus.Paid;
             await _unitOfWork.PaymentRepository.AddAsync(payment);
-             _unitOfWork.HotelBookingRepository.Update(hotelBooking);
+            _unitOfWork.FlightBookingRepository.Update(flightBooking);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
             return _mapper.Map<PaymentDto>(payment);
         }
