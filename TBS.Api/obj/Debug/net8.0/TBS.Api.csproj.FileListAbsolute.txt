@@ -172,3 +172,12 @@ C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\FluentValidation.AspNet
 C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
 C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
 C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\StackExchange.Redis.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Serilog.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Projects\TravelBookingSystem\TBS.Api\bin\Debug\net8.0\Serilog.Sinks.File.dll

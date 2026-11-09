@@ -20,7 +20,11 @@ namespace TBS.Application.Common
         public const string PaymentNotFound = "Axtarılan ödəniş tapılmadı.";
         public const string FlightBookingNotFound = "Axtarılan uçuş rezervasiyası tapılmadı.";
         public const string AirlineNotFound = "Axtarılan hava yolu şirkəti tapılmadı.";
-        
+        public const string ReviewNotFound = "Axtarılan rəy tapılmadı.";
+        public const string ReviewAlreadyExists = "Siz bu otelə artıq rəy yazmısınız.";
+        public const string ReviewOwnershipError = "Bu rəyi silməyə icazəniz yoxdur.";
+        public const string UnauthorizedUser = "İstifadəçi identifikasiya olunmadı.";
+
     }
 }
 

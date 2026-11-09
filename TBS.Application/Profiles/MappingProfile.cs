@@ -81,7 +81,8 @@ namespace TBS.Application.Profiles
                 .ForMember(dest => dest.PaymentMethod, opt => opt.MapFrom(src => src.PaymentMethod.ToString()))
                 .ForMember(dest => dest.Currency, opt => opt.MapFrom(src => src.Currency.ToString()));
 
-            CreateMap<CreatePaymentDto, Payment>();
+            CreateMap<CreateHotelBookingPaymentDto, Payment>();
+            CreateMap<CreateFlightBookingPaymentDto, Payment>();
             CreateMap<UpdatePaymentDto, Payment>();
 
             CreateMap<Airline, AirlineDto>();
@@ -97,6 +98,10 @@ namespace TBS.Application.Profiles
             CreateMap<CreatePassengerDto, Passenger>();
             CreateMap<CreateFlightBookingDto, FlightBooking>()
             .ForMember(dest => dest.FlightBookingPassengers, opt => opt.Ignore());
+
+            CreateMap<CreateReviewDto, Review>();
+            CreateMap<Review, ReviewDto>()
+              .ForMember(dest => dest.ApplicationUserName, opt => opt.MapFrom(src => src.ApplicationUser.UserName));
         }
      }
 }

@@ -28,9 +28,10 @@ namespace TBS.Application
             services.AddScoped<IAirlineService, AirlineService>();
             services.AddScoped<IAirportService, AirportService>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IReviewService, ReviewService>();
 
 
-            
+
             services.AddValidatorsFromAssemblyContaining<RegisterValidator>();
            
 
