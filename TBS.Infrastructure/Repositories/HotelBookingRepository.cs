@@ -44,8 +44,8 @@ namespace TBS.Infrastructure.Repositories
                 .AsNoTracking()
                 .Include(b => b.HotelBookingRooms)
                 .ThenInclude(br => br.Room)
-                
                 .Include(b => b.ApplicationUser)
+                .Include(b => b.Payments)
                 .ToListAsync(cancellationToken);
         }
 

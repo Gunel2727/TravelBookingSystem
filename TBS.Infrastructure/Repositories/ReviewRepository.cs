@@ -16,11 +16,31 @@ namespace TBS.Infrastructure.Repositories
         {
         }
 
-        public async Task<IList<Review>> GetReviewsByHotelIdAsync(Guid hotelId, CancellationToken cancellationToken = default)
+        public override async Task<Review?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
             return await _context.Reviews
                 .Include(r => r.ApplicationUser)
-                .Where(r => r.HotelId == hotelId).ToListAsync(cancellationToken);
-        }        
+                .Include(r => r.Hotel)
+                .FirstOrDefaultAsync(r => r.Id == id, cancellationToken);
+        }
+
+        public override async Task<IList<Review>> GetAllAsync(CancellationToken cancellationToken = default)
+        {
+            return await _context.Reviews
+                .AsNoTracking()
+                .Include(r => r.ApplicationUser)
+                .Include(r => r.Hotel)
+                .ToListAsync(cancellationToken);
+        }
+
+        public async Task<IList<Review>> GetReviewsByHotelIdAsync(Guid hotelId, CancellationToken cancellationToken = default)
+        {
+            return await _context.Reviews
+                .AsNoTracking()
+                .Include(r => r.ApplicationUser)
+                .Include(r => r.Hotel)
+                .Where(r => r.HotelId == hotelId)
+                .ToListAsync(cancellationToken);
+        }
     }
 }

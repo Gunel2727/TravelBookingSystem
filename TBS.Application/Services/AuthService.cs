@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.Internal;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -19,13 +20,15 @@ namespace TBS.Application.Services
         private readonly IConfiguration _configuration;
         private readonly IMapper _mapper;
         private readonly IAppDbContext _context;
+        private readonly IEmailService _emailService;
 
-        public AuthService(UserManager<ApplicationUser> userManager,IConfiguration configuration,IMapper mapper,IAppDbContext context)
+        public AuthService(UserManager<ApplicationUser> userManager,IConfiguration configuration,IMapper mapper,IAppDbContext context,IEmailService emailService)
         {
             _userManager = userManager;
             _configuration = configuration;
             _mapper = mapper;
             _context = context;
+            _emailService = emailService;
         }
 
         public async Task<string> ForgotPasswordAsync(ForgotPasswordDto dto, CancellationToken cancellationToken = default)
@@ -36,6 +39,11 @@ namespace TBS.Application.Services
                 throw new NotFoundException("İstifadəçi tapılmadı");
             }
             var resetToken=await _userManager.GeneratePasswordResetTokenAsync(user);
+            await _emailService.SendEmailAsync(
+                 user.Email,
+                 "Şifrənin Sıfırlanması",
+                 $"Şifrənizi yeniləmək üçün tokeniniz: {resetToken}"
+             );
             return resetToken;
         }
 
@@ -135,6 +143,12 @@ namespace TBS.Application.Services
                 throw new BadRequestException($"Qeydiyyat uğursuz oldu: {errors}");
             }
             await _userManager.AddToRoleAsync(user, "User");
+
+            await _emailService.SendEmailAsync(
+                 user.Email,
+                 "Qeydiyyat Uğurlu",
+                 "Siz uğurla qeydiyyatdan keçdiniz."
+             );
 
             return new AuthResponseDto
             {

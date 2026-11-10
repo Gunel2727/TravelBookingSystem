@@ -15,6 +15,8 @@ using TBS.Domain.Entitites;
 using TBS.Domain.Interfaces;
 using TBS.Infrastructure.Data;
 using TBS.Infrastructure.Repositories;
+using TBS.Infrastructure.Services;
+using TBS.Infrastructure.Settings;
 
 
 namespace TBS.Infrastructure
@@ -76,10 +78,13 @@ namespace TBS.Infrastructure
             services.AddScoped<IAirportRepository, AirportRepository>();
             services.AddScoped<IPassengerRepository, PassengerRepository>();
             services.AddScoped<IReviewRepository, ReviewRepository>();
+            services.AddScoped<IEmailService, EmailService>();
 
             services.AddHttpContextAccessor();
             services.AddScoped<ICurrentUserService, CurrentUserService>();
             services.AddScoped<IAppDbContext>(provider => provider.GetRequiredService<AppDbContext>());
+
+            services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
 
 
             return services;

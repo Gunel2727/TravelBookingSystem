@@ -46,7 +46,9 @@ namespace TBS.Application.Services
             review.ApplicationUserId = userId;
             await _unitOfWork.ReviewRepository.AddAsync(review);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
-            return _mapper.Map<ReviewDto>(review);
+            var createdReview = await _unitOfWork.ReviewRepository.GetByIdAsync(review.Id, cancellationToken);
+
+            return _mapper.Map<ReviewDto>(createdReview);
 
         }
 
