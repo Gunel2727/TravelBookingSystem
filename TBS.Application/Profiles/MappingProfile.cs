@@ -102,6 +102,10 @@ namespace TBS.Application.Profiles
             CreateMap<CreateReviewDto, Review>();
             CreateMap<Review, ReviewDto>()
               .ForMember(dest => dest.ApplicationUserName, opt => opt.MapFrom(src => src.ApplicationUser.UserName));
+
+            CreateMap<RoomImageDto, RoomImage>();
+            CreateMap<UploadRoomImageDto, RoomImage>()
+                .ForMember(dest => dest.ImageUrl, opt => opt.Ignore());
         }
      }
 }
