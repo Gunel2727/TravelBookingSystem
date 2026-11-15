@@ -18,7 +18,7 @@ namespace TBS.Domain.Interfaces
         IPassengerRepository PassengerRepository { get; }
         IAirlineRepository AirlineRepository { get; }
         IReviewRepository ReviewRepository { get; }
-
+        IRoomImageRepository RoomImageRepository { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }

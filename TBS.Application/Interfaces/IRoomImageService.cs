@@ -10,6 +10,6 @@ namespace TBS.Application.Interfaces
 {
     public interface IRoomImageService
     {
-        Task UploadImageAsync(UploadRoomImageDto uploadRoomImageDto);
+        Task<RoomImageDto> UploadImageAsync(UploadRoomImageDto uploadRoomImageDto);
     }
 }

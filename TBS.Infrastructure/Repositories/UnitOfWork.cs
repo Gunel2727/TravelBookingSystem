@@ -27,6 +27,7 @@ namespace TBS.Infrastructure.Repositories
         private IAirlineRepository _airlineRepository;
         private IPassengerRepository _passengerRepository;
         private IReviewRepository _reviewRepository;
+        private IRoomImageRepository _roomImageRepository;
 
         public IFlightRepository FlightRepository =>
             _flightRepository ??= new FlightRepository(_context);
@@ -57,6 +58,9 @@ namespace TBS.Infrastructure.Repositories
 
         public IReviewRepository ReviewRepository =>
             _reviewRepository ??= new ReviewRepository(_context);
+
+        public IRoomImageRepository RoomImageRepository =>
+            _roomImageRepository ??= new RoomImageRepository(_context);
         public void Dispose()
         {
            _context.Dispose();

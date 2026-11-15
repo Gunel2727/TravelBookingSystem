@@ -29,6 +29,7 @@ namespace TBS.Application
             services.AddScoped<IAirportService, AirportService>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IReviewService, ReviewService>();
+            services.AddScoped<IRoomImageService, RoomImageService>();
 
 
 
