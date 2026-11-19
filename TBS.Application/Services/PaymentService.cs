@@ -27,8 +27,7 @@ namespace TBS.Application.Services
 
         public async Task<PaymentDto> CreateHotelBookingPaymentAsync(CreateHotelBookingPaymentDto dto, CancellationToken cancellationToken = default)
         {
-            if (dto.HotelBookingId == null)
-                throw new BadRequestException("Otel rezervasiya ID-si göndərilməlidir.");
+           
             var userId = _currentUserService.UserId;
             if (userId == Guid.Empty)
                 throw new BadRequestException("İstifadəçi ID-si tapılmadı.");
@@ -39,13 +38,11 @@ namespace TBS.Application.Services
            
             if (hotelBooking.ApplicationUserId != userId)
                 throw new ForbiddenException("Bu rezervasiya üçün ödəniş etmək icazəniz yoxdur.");
-            if (hotelBooking.Status == BookingStatus.Cancelled)
-                throw new BadRequestException("Ləğv olunmuş rezervasiya üçün ödəniş edilə bilməz.");
+            if (hotelBooking.Status != BookingStatus.Pending)
+                throw new BadRequestException("Yalnız gözləmədə olan (Pending) rezervasiyalar üçün ödəniş edilə bilər");
             if(hotelBooking.TotalPrice != dto.Amount)
                 throw new BadRequestException("Ödənilən məbləğ bronun ümumi qiyməti ilə üst-üstə düşmür.");
-            hotelBooking.Status = BookingStatus.Confirmed;
-           
-
+            
             var payment = _mapper.Map<Payment>(dto);
             payment.HotelBookingId = dto.HotelBookingId;
             payment.PaymentDate = DateTime.UtcNow;
@@ -58,8 +55,7 @@ namespace TBS.Application.Services
         }
         public async Task<PaymentDto> CreateFlightBookingPaymentAsync(CreateFlightBookingPaymentDto dto, CancellationToken cancellationToken = default)
         {
-            if (dto.FlightBookingId == null)
-                throw new BadRequestException("Uçuş rezervasiya ID-si göndərilməlidir.");
+           
             var userId = _currentUserService.UserId;
             if (userId == Guid.Empty)
                 throw new BadRequestException("İstifadəçi ID-si tapılmadı.");
@@ -70,8 +66,8 @@ namespace TBS.Application.Services
            
             if (flightBooking.ApplicationUserId != userId)
                 throw new ForbiddenException("Bu rezervasiya üçün ödəniş etmək icazəniz yoxdur.");
-            if (flightBooking.Status == BookingStatus.Cancelled)
-                throw new BadRequestException("Ləğv olunmuş rezervasiya üçün ödəniş edilə bilməz.");
+            if (flightBooking.Status != BookingStatus.Pending)
+                throw new BadRequestException("Yalnız gözləmədə olan (Pending) rezervasiyalar üçün ödəniş edilə bilər");
             if (flightBooking.TotalPrice != dto.Amount)
                 throw new BadRequestException("Ödənilən məbləğ bronun ümumi qiyməti ilə üst-üstə düşmür.");
             flightBooking.Status = BookingStatus.Confirmed;

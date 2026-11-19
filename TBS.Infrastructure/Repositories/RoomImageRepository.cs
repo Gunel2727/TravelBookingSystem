@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,15 @@ namespace TBS.Infrastructure.Repositories
     {
         public RoomImageRepository(AppDbContext context) : base(context)
         {
+        }
+
+        public async Task<IList<RoomImage>> GetImagesByRoomIdAsync(Guid roomId, CancellationToken cancellationToken = default)
+        {
+           return await _context.RoomImages
+                  .Where(ri => ri.RoomId == roomId)
+                  .Include(ri => ri.Room)
+                  .AsNoTracking()
+                  .ToListAsync(cancellationToken);
         }
     }
 }

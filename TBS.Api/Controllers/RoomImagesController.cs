@@ -18,10 +18,24 @@ namespace TBS.Api.Controllers
         }
 
         [HttpPost("upload")]
-        public async Task<IActionResult> UploadImage([FromForm] UploadRoomImageDto uploadRoomImageDto)
+        public async Task<IActionResult> UploadImage([FromForm] UploadRoomImageDto uploadRoomImageDto,CancellationToken cancellationToken = default)
         {
-            var result = await _roomImageService.UploadImageAsync(uploadRoomImageDto);
+            var result = await _roomImageService.UploadImageAsync(uploadRoomImageDto, cancellationToken);
             return Ok(ResponseModel<RoomImageDto>.Ok(result));
+        }
+
+        [HttpGet("room/{roomId:guid}")]
+        public async Task<IActionResult> GetImagesByRoomId(Guid roomId, CancellationToken cancellationToken = default)
+        {
+            var result = await _roomImageService.GetImagesByRoomIdAsync(roomId, cancellationToken);
+            return Ok(ResponseModel<IList<RoomImageDto>>.Ok(result));
+        }
+
+        [HttpDelete("{imageId:guid}")]
+        public async Task<IActionResult> DeleteImage(Guid imageId, CancellationToken cancellationToken = default)
+        {
+            await _roomImageService.DeleteAsync(imageId, cancellationToken);
+            return Ok(ResponseModel<bool>.Ok(true));
         }
     }
 }

@@ -10,6 +10,8 @@ namespace TBS.Application.Interfaces
 {
     public interface IRoomImageService
     {
-        Task<RoomImageDto> UploadImageAsync(UploadRoomImageDto uploadRoomImageDto);
+        Task<RoomImageDto> UploadImageAsync(UploadRoomImageDto uploadRoomImageDto,CancellationToken cancellationToken=default);
+        Task<IList<RoomImageDto>> GetImagesByRoomIdAsync(Guid roomId,CancellationToken cancellationToken=default);
+        Task DeleteAsync(Guid imageId, CancellationToken cancellationToken = default);
     }
 }

@@ -9,5 +9,6 @@ namespace TBS.Domain.Interfaces
 {
     public interface IRoomImageRepository:IGenericRepository<RoomImage>
     {
+        Task<IList<RoomImage>> GetImagesByRoomIdAsync(Guid roomId, CancellationToken cancellationToken = default);
     }
 }

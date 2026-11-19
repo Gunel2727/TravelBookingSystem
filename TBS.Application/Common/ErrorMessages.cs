@@ -24,6 +24,7 @@ namespace TBS.Application.Common
         public const string ReviewAlreadyExists = "Siz bu otelə artıq rəy yazmısınız.";
         public const string ReviewOwnershipError = "Bu rəyi silməyə icazəniz yoxdur.";
         public const string UnauthorizedUser = "İstifadəçi identifikasiya olunmadı.";
+        public const string RoomImageNotFound = "Axtarılan otaq şəkli tapılmadı.";
 
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TBS.Application.Common;
 using TBS.Application.DTOs.Room;
 using TBS.Application.Interfaces;
 using TBS.Domain.Entitites;
@@ -24,9 +25,40 @@ namespace TBS.Application.Services
             _mapper = mapper;
             _webHostEnvironment = webHostEnvironment;
         }
-        public async Task<RoomImageDto> UploadImageAsync(UploadRoomImageDto uploadRoomImageDto)
+
+        public async Task DeleteAsync(Guid imageId, CancellationToken cancellationToken = default)
         {
-            if(uploadRoomImageDto.Image == null || uploadRoomImageDto.Image.Length == 0)
+            var roomImage=await _unitOfWork.RoomImageRepository.GetByIdAsync(imageId, cancellationToken);
+            if (roomImage == null)
+            {
+                throw new ArgumentException(ErrorMessages.RoomImageNotFound);
+            }
+            if(!string.IsNullOrEmpty(roomImage.ImageUrl))
+            {
+                var filePath=Path.Combine(_webHostEnvironment.WebRootPath,roomImage.ImageUrl.TrimStart('/','\\'));
+                if(File.Exists(filePath))
+                {
+                    File.Delete(filePath);
+                }
+            }
+            _unitOfWork.RoomImageRepository.Delete(roomImage);
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
+        }
+
+        public async Task<IList<RoomImageDto>> GetImagesByRoomIdAsync(Guid roomId, CancellationToken cancellationToken = default)
+        {
+            var images=await _unitOfWork.RoomImageRepository.GetImagesByRoomIdAsync(roomId, cancellationToken);
+            return _mapper.Map<IList<RoomImageDto>>(images);
+        }
+
+        public async Task<RoomImageDto> UploadImageAsync(UploadRoomImageDto uploadRoomImageDto,CancellationToken cancellationToken = default)
+        {
+            var room = await _unitOfWork.RoomRepository.GetByIdAsync(uploadRoomImageDto.RoomId, cancellationToken);
+            if(room == null)
+            {
+                throw new ArgumentException(ErrorMessages.RoomNotFound);
+            }
+            if (uploadRoomImageDto.Image == null || uploadRoomImageDto.Image.Length == 0)
             {
                 throw new ArgumentException("No image file provided.");
             }
@@ -42,15 +74,16 @@ namespace TBS.Application.Services
 
             using(var fileStream=new FileStream(filePath,FileMode.Create))
             {
-                await uploadRoomImageDto.Image.CopyToAsync(fileStream);
+                await uploadRoomImageDto.Image.CopyToAsync(fileStream,cancellationToken);
             }
 
             var relativePath = $"/images/rooms/{uniqueFileName}";
             var roomImage=_mapper.Map<RoomImage>(uploadRoomImageDto);
             roomImage.ImageUrl = relativePath;
+            roomImage.Room = room;
 
             await _unitOfWork.RoomImageRepository.AddAsync(roomImage);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
 
             return _mapper.Map<RoomImageDto>(roomImage);
 
